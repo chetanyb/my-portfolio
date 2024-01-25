@@ -29,7 +29,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase">chethack</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
@@ -38,7 +38,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Discord
+					Blog
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -46,7 +46,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
+					Portfolio
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -54,7 +54,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					GitHub
+					Connect
 				</a>
 			</svelte:fragment>
 		</AppBar>
