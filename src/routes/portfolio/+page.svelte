@@ -10,7 +10,7 @@
 	</div>
 	<!--Creating cards for each projects-->
 	<div class="w-screen flex px-10">
-		<div class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline">
+		<div class="w-1/4 block card-hover card p-4 m-4 bg-transparent variant-glass variant-outline">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>

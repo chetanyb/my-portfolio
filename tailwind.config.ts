@@ -13,7 +13,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				maroon: '#3C1120'
+				maroon: '#3C1120',
+				'sita-orange': '#DF4E21'
 			}
 		}
 	},
