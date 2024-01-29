@@ -1,3 +1,9 @@
+<script>
+	function handleClick() {
+		console.log('Button clicked');
+	}
+</script>
+
 <div>
 	<div class="flex item-center my-10">
 		<div class="w-full flex absolute justify-center">
@@ -15,21 +21,6 @@
 	</div>
 	<!--Creating cards for each projects-->
 	<div class="w-screen flex px-10">
-		<div class="w-1/4 block card-hover card p-4 m-4 bg-transparent variant-glass variant-outline">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
-				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
-			</div>
-			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
-			<p class="m-8">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus laborum nobis
-				molestiae quis. Dolorem totam perspiciatis maiores. Non maiores excepturi quo inventore,
-				recusandae placeat eveniet, molestiae animi veritatis ratione ipsa.
-			</p>
-			<div class="flex justify-start mx-7">
-				<span class="badge variant-ghost mx-1">IoT</span>
-				<span class="badge variant-ghost mx-1">Blockchain</span>
-			</div>
-		</div>
 		<div class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
@@ -45,6 +36,25 @@
 				<span class="badge variant-ghost mx-1">Blockchain</span>
 			</div>
 		</div>
+		<button
+			class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline"
+			on:click={handleClick}
+		>
+			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
+			</div>
+			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
+			<p class="m-8">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus laborum nobis
+				molestiae quis. Dolorem totam perspiciatis maiores. Non maiores excepturi quo inventore,
+				recusandae placeat eveniet, molestiae animi veritatis ratione ipsa.
+			</p>
+			<div class="flex justify-start mx-7">
+				<span class="badge variant-ghost mx-1">IoT</span>
+				<span class="badge variant-ghost mx-1">Blockchain</span>
+			</div>
+		</button>
+
 		<div
 			class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline-secondary variant-outline"
 		>
