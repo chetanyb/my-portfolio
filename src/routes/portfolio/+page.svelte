@@ -21,7 +21,7 @@
 	</div>
 	<!--Creating cards for each projects-->
 	<div class="w-screen flex px-10">
-		<div class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline">
+		<div class="w-1/4 block card-hover card p-4 m-4 !bg-transparent">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
@@ -36,10 +36,7 @@
 				<span class="badge variant-ghost mx-1">Blockchain</span>
 			</div>
 		</div>
-		<button
-			class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline"
-			on:click={handleClick}
-		>
+		<button class="w-1/4 block card-hover card p-4 m-4 !bg-transparent" on:click={handleClick}>
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
@@ -55,9 +52,7 @@
 			</div>
 		</button>
 
-		<div
-			class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline-secondary variant-outline"
-		>
+		<div class="w-1/4 block card-hover card p-4 m-4 !bg-transparent">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
@@ -72,9 +67,7 @@
 				<span class="badge variant-ghost mx-1">Blockchain</span>
 			</div>
 		</div>
-		<div
-			class="w-1/4 block card-hover card p-4 m-4 variant-glass variant-outline-secondary variant-outline"
-		>
+		<div class="w-1/4 block card-hover card p-4 m-4 !bg-transparent">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
@@ -91,7 +84,7 @@
 		</div>
 	</div>
 	<div class="w-screen flex px-10">
-		<div class="w-1/3 block card-hover card p-4 m-4 variant-glass variant-outline">
+		<div class="w-1/3 block card-hover card p-4 m-4 !bg-transparent">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
@@ -106,7 +99,7 @@
 				<span class="badge variant-ghost mx-1">Blockchain</span>
 			</div>
 		</div>
-		<div class="w-1/3 block card-hover card p-4 m-4 variant-glass variant-outline">
+		<div class="w-1/3 block card-hover card p-4 m-4 !bg-transparent">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
@@ -121,9 +114,7 @@
 				<span class="badge variant-ghost mx-1">Blockchain</span>
 			</div>
 		</div>
-		<div
-			class="w-1/3 block card-hover card p-4 m-4 variant-glass variant-outline-secondary variant-outline"
-		>
+		<div class="w-1/3 block card-hover card p-4 m-4 !bg-transparent">
 			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
