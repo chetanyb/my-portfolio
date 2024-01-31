@@ -1,6 +1,12 @@
-<script>
+<script lang="ts">
+	import { goto } from '$app/navigation';
+
 	function handleClick() {
 		console.log('Button clicked');
+	}
+
+	function navigateToProject(projectName: string) {
+		goto(`/portfolio/${projectName}`);
 	}
 </script>
 
@@ -22,7 +28,9 @@
 	<!--Creating cards for each projects-->
 	<div class="w-screen flex px-10">
 		<div class="w-1/4 block card-hover card p-4 m-4 !bg-transparent">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
@@ -36,8 +44,13 @@
 				<span class="badge variant-ghost mx-1">Blockchain</span>
 			</div>
 		</div>
-		<button class="w-1/4 block card-hover card p-4 m-4 !bg-transparent" on:click={handleClick}>
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+		<button
+			class="w-1/4 block card-hover card p-4 m-4 !bg-transparent"
+			on:click={() => navigateToProject('sita')}
+		>
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
@@ -53,7 +66,9 @@
 		</button>
 
 		<div class="w-1/4 block card-hover card p-4 m-4 !bg-transparent">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
@@ -68,7 +83,9 @@
 			</div>
 		</div>
 		<div class="w-1/4 block card-hover card p-4 m-4 !bg-transparent">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
@@ -85,7 +102,9 @@
 	</div>
 	<div class="w-screen flex px-10">
 		<div class="w-1/3 block card-hover card p-4 m-4 !bg-transparent">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
@@ -100,7 +119,9 @@
 			</div>
 		</div>
 		<div class="w-1/3 block card-hover card p-4 m-4 !bg-transparent">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
@@ -115,7 +136,9 @@
 			</div>
 		</div>
 		<div class="w-1/3 block card-hover card p-4 m-4 !bg-transparent">
-			<div class="-m-4 h-16 rounded-sm bg-maroon rounded-t-sm rounded-b-none">
+			<div
+				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
 			</div>
 			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
