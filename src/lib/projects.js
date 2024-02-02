@@ -2,7 +2,8 @@ const projects = [
 	{
 		slug: 'project1',
 		title: 'Project One',
-		description: 'Description of Project One...'
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.'
 	},
 	{
 		slug: 'project2',
