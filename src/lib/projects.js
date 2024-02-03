@@ -3,7 +3,8 @@ const projects = [
 		slug: 'project1',
 		title: 'Project One',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.'
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.',
+		links: { github: '' }
 	},
 	{
 		slug: 'project2',
