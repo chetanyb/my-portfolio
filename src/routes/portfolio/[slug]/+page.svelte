@@ -8,14 +8,36 @@
 	<div class="flex items-center">
 		<h1 class="h1">{data.project?.slug}</h1>
 
-		<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1 px-12 !bg-transparent">
-			<a class="logo-item" href={data.project?.links?.github}>
+		<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1 px-12 flex flex-auto">
+			<a class="logo-item variant-ghost" href={data.project?.links?.github}>
 				<img src="/github.svg" alt="github-logo" class="h-5" />
 				<span>GitHub</span>
 			</a>
-			<a class="logo-item" href="/">
-				<span>(icon)</span>
-				<span>Skeleton</span>
+			<a class="logo-item variant-ghost flex justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+				<span>ETHGlobal</span>
+			</a>
+			<a class="logo-item variant-ghost flex items-center justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+			</a>
+			<a class="logo-item variant-ghost flex items-center justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+			</a>
+			<a class="logo-item variant-ghost flex justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+				<span>ETHGlobal</span>
+			</a>
+			<a class="logo-item variant-ghost flex justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+				<span>ETHGlobal</span>
+			</a>
+			<a class="logo-item variant-ghost flex justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+				<span>ETHGlobal</span>
+			</a>
+			<a class="logo-item variant-ghost flex justify-center" href="/">
+				<img src="/ethglobal.svg" class="h-5" />
+				<span>ETHGlobal</span>
 			</a>
 		</div>
 	</div>
