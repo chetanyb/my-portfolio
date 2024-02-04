@@ -1,7 +1,5 @@
 <script>
 	export let data;
-	console.log('data ye hai');
-	console.log(data);
 </script>
 
 <article>
@@ -48,20 +46,27 @@
 		{/each}
 	</div>
 
-	<div class="flex-row">
-		<div class="pt-8">
+	<div class="flex">
+		<div class="pt-8 w-full">
 			<p>{data.project?.elaboration}</p>
+			<br />
+			<p>{data.project?.how}</p>
 		</div>
-		<hr class="!border-t-2 my-6 !border-dashed" />
-		<div class="flex items-center">
+		<span class="divider-vertical mx-2 border-dashed" />
+
+		<div class="pt-8 w-1/4">
 			{#if data.project?.details}
 				{#each Object.entries(data.project?.details) as [key, value]}
-					<div class="px-2">
+					<div class="pl-4">
 						<p class="h6">{key}</p>
-						<p>{value}</p>
+						<ul class="list-disc pl-6">
+							{#each value.split('\n') as line}
+								<li>{line}</li>
+							{/each}
+						</ul>
 					</div>
 					{#if key !== Object.keys(data.project?.details)[Object.keys(data.project?.details).length - 1]}
-						<span class="divider-vertical h-20 !border-dashed" />
+						<hr class="!border-t-1 my-6 !border-dashed" />
 					{/if}
 				{/each}
 			{/if}
