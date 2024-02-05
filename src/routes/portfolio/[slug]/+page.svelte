@@ -1,4 +1,5 @@
 <script>
+	import projects from '$lib/projects';
 	export let data;
 </script>
 
@@ -6,36 +7,20 @@
 	<div class="flex items-center">
 		<h1 class="h1">{data.project?.title}</h1>
 		<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1 pl-8 flex flex-auto">
-			<a class="logo-item variant-ghost" href={data.project?.links?.github}>
-				<img src="/github.svg" alt="github-logo" class="h-5" />
-				<span>GitHub</span>
-			</a>
-			<a class="logo-item variant-ghost flex justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-				<span>ETHGlobal</span>
-			</a>
-			<a class="logo-item variant-ghost flex items-center justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-			</a>
-			<a class="logo-item variant-ghost flex items-center justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-			</a>
-			<a class="logo-item variant-ghost flex justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-				<span>ETHGlobal</span>
-			</a>
-			<a class="logo-item variant-ghost flex justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-				<span>ETHGlobal</span>
-			</a>
-			<a class="logo-item variant-ghost flex justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-				<span>ETHGlobal</span>
-			</a>
-			<a class="logo-item variant-ghost flex justify-center" href="/">
-				<img src="/ethglobal.svg" alt="ethglobal-logo" class="h-5" />
-				<span>ETHGlobal</span>
-			</a>
+			{#if data.project?.links}
+				{#each Object.keys(data.project?.links) as link}
+					{#if data.project?.links[link] != null}
+						<a class="logo-item variant-ghost" href={data.project?.links[link].url} target="_blank">
+							<img
+								src={data.project?.links[link].logo}
+								alt={`${data.project?.links[link].name}-logo`}
+								class="h-5"
+							/>
+							<span>{data.project?.links[link].name}</span>
+						</a>
+					{/if}
+				{/each}
+			{/if}
 		</div>
 	</div>
 	<h4 class="h4 py-6">{data.project?.description}</h4>
@@ -61,7 +46,7 @@
 						<p class="h6">{key}</p>
 						<ul class="list-disc pl-6">
 							{#each value.split('\n') as line}
-								<li>{line}</li>
+								<li>{@html line}</li>
 							{/each}
 						</ul>
 					</div>

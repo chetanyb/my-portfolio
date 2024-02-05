@@ -4,10 +4,18 @@ const projects = [
 		title: 'SITA ETHGlobal Paris 2023',
 		description:
 			'🌾 Tailored credit lines for farmers using real-time soil insights from IoT & satellite tech. Empowering growth, one harvest at a time. 🛰️🌱',
-		links: { github: '', ethGlobal: '', devpost: '', youtube: '', news: '', website: '' },
+		links: {
+			github: { url: 'https://github.com/EGP-2023/SITA', logo: '/github.svg', name: 'GitHub' },
+			ethGlobal: { url: 'https://example.com', logo: '/ethglobal.svg', name: 'ETHGlobal' },
+			devpost: null,
+			youtube: null,
+			news: null,
+			website: null
+		},
+
 		details: {
 			Role: '[Leader]',
-			Team: '[Member1, Member2, Member3]',
+			Team: '<a href="https://www.linkedin.com" target="_blank">Member1</a>\n<a href="https://www.linkedin.com" target="_blank">Member2</a>\n<a href="https://www.linkedin.com" target="_blank">Member3</a>',
 			Technologies:
 				'Blockchain\nIot\nExpressJs\nReactJs\nSolidity\nTruffle\nWeb3.js\nNodeJs\nMongoDB\nExpressJs',
 			Accomplishments:
