@@ -1,10 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 
-	function handleClick() {
-		console.log('Button clicked');
-	}
-
 	function navigateToProject(projectName: string) {
 		goto(`/portfolio/${projectName}`);
 	}

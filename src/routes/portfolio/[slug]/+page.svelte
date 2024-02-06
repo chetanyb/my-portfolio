@@ -1,5 +1,4 @@
 <script>
-	import projects from '$lib/projects';
 	export let data;
 </script>
 
@@ -44,9 +43,13 @@
 				{#each Object.entries(data.project?.details) as [key, value]}
 					<div class="pl-4">
 						<p class="h6">{key}</p>
-						<ul class="list-disc pl-6">
+						<ul class="list-disc pl-6 flex flex-wrap">
 							{#each value.split('\n') as line}
-								<li>{@html line}</li>
+								{#if line.length > 20 && key != 'Team'}
+									<li class="w-full">{@html line}</li>
+								{:else}
+									<li class="w-1/2">{@html line}</li>
+								{/if}
 							{/each}
 						</ul>
 					</div>
