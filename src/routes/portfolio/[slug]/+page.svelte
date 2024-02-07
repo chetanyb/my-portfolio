@@ -1,4 +1,10 @@
-<script>
+<script lang="ts">
+	import { modalStore } from '../../../stores/modalStore.js';
+
+	function openModal(image: string) {
+		modalStore.set({ visible: true, image });
+	}
+
 	export let data;
 </script>
 
@@ -25,10 +31,28 @@
 	<h4 class="h4 py-6">{data.project?.description}</h4>
 
 	<div class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto px-4 pb-4">
-		{#each Array.from({ length: 8 }) as _, i}
-			<div class="snap-start shrink-0 card py-20 w-40 md:w-80 text-center">{i + 1}</div>
+		{#if data.project?.video}
+			<div
+				class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 text-center flex justify-center items-center overflow-hidden"
+			>
+				<video controls class="object-contain w-full h-full px-2">
+					<source src={data.project.video} type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		{/if}
+		{#each data.project.images as image}
+			<button
+				class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 text-center cursor-pointer"
+				on:click={() => openModal(image)}
+				style="background: none; border: none; padding: 0;"
+			>
+				<img src={image} alt={data.project?.title} class="object-contain w-full h-full px-2" />
+			</button>
 		{/each}
 	</div>
+
+	<hr class="!border-t-1 mt-6 !border-dashed" />
 
 	<div class="flex">
 		<div class="pt-8 w-full">
