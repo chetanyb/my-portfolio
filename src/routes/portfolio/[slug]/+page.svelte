@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { modalStore } from '../../../stores/modalStore.js';
+	import FullScreenImageModal from '$lib/modals/FullScreenImageModal.svelte';
 
 	function openModal(image: string) {
 		modalStore.set({ visible: true, image });
@@ -7,6 +8,8 @@
 
 	export let data;
 </script>
+
+<FullScreenImageModal />
 
 <article>
 	<div class="flex items-center">
