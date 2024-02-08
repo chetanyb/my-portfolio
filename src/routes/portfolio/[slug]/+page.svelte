@@ -38,13 +38,14 @@
 			<div
 				class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 text-center flex justify-center items-center overflow-hidden"
 			>
+				<!-- svelte-ignore a11y-media-has-caption -->
 				<video controls class="object-contain w-full h-full px-2">
 					<source src={data.project.video} type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 			</div>
 		{/if}
-		{#each data.project.images as image}
+		{#each data.project?.images ?? [] as image}
 			<button
 				class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 text-center cursor-pointer"
 				on:click={() => openModal(image)}
