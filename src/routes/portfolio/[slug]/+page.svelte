@@ -12,25 +12,30 @@
 <FullScreenImageModal />
 
 <article>
-	<div class="flex items-center">
+	<div class="flex flex-col sm:flex-row items-center">
 		<h1 class="h1">{data.project?.title}</h1>
-		<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1 pl-8 flex flex-auto">
+		<div class="flex flex-row sm:flex-row flex-auto gap-1 pl-8 w-full sm:w-auto">
 			{#if data.project?.links}
 				{#each Object.keys(data.project?.links) as link}
 					{#if data.project?.links[link] != null}
-						<a class="logo-item variant-ghost" href={data.project?.links[link].url} target="_blank">
+						<a
+							class="logo-item variant-ghost w-full sm:w-auto"
+							href={data.project?.links[link].url}
+							target="_blank"
+						>
 							<img
 								src={data.project?.links[link].logo}
 								alt={`${data.project?.links[link].name}-logo`}
-								class="h-5"
+								class="h-5 mx-auto sm:mx-0"
 							/>
-							<span>{data.project?.links[link].name}</span>
+							<span class="hidden lg:block">{data.project?.links[link].name}</span>
 						</a>
 					{/if}
 				{/each}
 			{/if}
 		</div>
 	</div>
+
 	<h4 class="h4 py-6">{data.project?.description}</h4>
 
 	<div class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto px-4 pb-4">
@@ -58,15 +63,15 @@
 
 	<hr class="!border-t-1 mt-6 !border-dashed" />
 
-	<div class="flex">
+	<div class="flex flex-col sm:flex-row">
 		<div class="pt-8 w-full">
 			<p>{data.project?.elaboration}</p>
 			<br />
 			<p>{data.project?.how}</p>
 		</div>
-		<span class="divider-vertical mx-2 border-dashed" />
+		<span class="hidden sm:block divider-vertical mx-2 border-dashed" />
 
-		<div class="pt-8 w-1/4">
+		<div class="pt-8 w-full sm:w-1/4 order-last sm:order-none">
 			{#if data.project?.details}
 				{#each Object.entries(data.project?.details) as [key, value]}
 					<div class="pl-4">
@@ -76,7 +81,7 @@
 								{#if line.length > 20 && key != 'Team'}
 									<li class="w-full">{@html line}</li>
 								{:else}
-									<li class="w-1/2 pr-4">{@html line}</li>
+									<li class="2xl:w-1/2 mx-4 lg:mx-2 2xl:mx-0 md:pr-4 sm:w-full">{@html line}</li>
 								{/if}
 							{/each}
 						</ul>
