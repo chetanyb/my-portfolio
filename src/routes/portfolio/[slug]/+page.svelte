@@ -65,9 +65,13 @@
 
 	<div class="flex flex-col sm:flex-row">
 		<div class="pt-8 w-full">
-			<p>{data.project?.elaboration}</p>
+			{#if data.project?.elaboration}
+				<p class="text-justify">{data.project?.elaboration}</p>
+			{/if}
 			<br />
-			<p>{data.project?.how}</p>
+			{#if data.project?.how}
+				<p class="text-justify">{data.project?.how}</p>
+			{/if}
 		</div>
 		<span class="hidden sm:block divider-vertical mx-2 border-dashed" />
 
