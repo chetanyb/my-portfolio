@@ -15,6 +15,9 @@ export default {
 			colors: {
 				maroon: '#3C1120',
 				'sita-orange': '#DF4E21'
+			},
+			fontFamily: {
+				kalam: ['Kalam', 'Noto Sans Devanagari', 'sans-serif']
 			}
 		}
 	},
