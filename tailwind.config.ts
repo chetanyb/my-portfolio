@@ -17,7 +17,8 @@ export default {
 				'sita-orange': '#DF4E21'
 			},
 			fontFamily: {
-				kalam: ['Kalam', 'Noto Sans Devanagari', 'sans-serif']
+				kalam: ['Kalam', 'Noto Sans Devanagari', 'sans-serif'],
+				love_notes: ['Love Notes', 'sans-serif']
 			}
 		}
 	},
