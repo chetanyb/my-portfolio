@@ -27,7 +27,7 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar gap="gap-x-2" padding="p-2">
 			<svelte:fragment slot="lead">
 				<strong class="text-xl uppercase">chethack</strong>
 			</svelte:fragment>
