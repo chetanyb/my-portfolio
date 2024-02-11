@@ -1,3 +1,12 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	let vh: number;
+
+	onMount(() => {
+		vh = window.innerHeight;
+	});
+</script>
+
 <div>
 	<div class="flex flex-row justify-center group namaaste-cursor unselectable h-auto relative">
 		<h1
@@ -12,11 +21,14 @@
 		</h2>
 	</div>
 	<div class="flex w-full justify-center hide-scrollbar min-[350px]:my-2 md:my-6 lg:my-12">
-		<div class="mt-12 w-full h-2/3 overflow-scroll hide-scrollbar">
+		<div class="mt-12 h-[75vh] lg:w-[50vh] overflow-scroll hide-scrollbar rounded-md">
 			<!-- svelte-ignore a11y-missing-content -->
 			<a
 				class="twitter-timeline"
 				data-theme="dark"
+				data-dnt="true"
+				data-height={0.75 * vh}
+				data-chrome="transparent noscrollbar"
 				href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
 			></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
