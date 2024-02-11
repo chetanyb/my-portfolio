@@ -1,23 +1,24 @@
-<div class="hide">
-	<div class="flex justify-center group namaaste-cursor unselectable h-auto relative">
+<div>
+	<div class="flex flex-row justify-center group namaaste-cursor unselectable h-auto relative">
 		<h1
-			class="h1 my-2 font-love_notes absolute top-0 left-0 right-0 mx-auto text-center group-hover:hidden"
+			class="h1 flex justify-center my-3 absolute top-0 left-0 right-0 mx-auto text-center group-hover:hidden"
 		>
-			Hello! Nice to meet you!
+			Hello!<span class="hidden min-[350px]:block"> Nice to meet you!</span>
 		</h1>
 		<h2
-			class="h2 font-kalam font-semibold absolute top-0 left-0 right-0 mx-auto my-4 text-center hidden group-hover:block"
+			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto my-4 text-center hidden group-hover:block group-hover:flex"
 		>
-			नमस्ते!आपसे मिलकर अच्छा लगा!
+			नमस्ते!<span class="hidden min-[460px]:block flex-row">आपसे मिलकर अच्छा लगा!</span>
 		</h2>
 	</div>
-	<div class="flex w-full justify-center hide-scrollbar">
+	<div class="flex w-full justify-center hide-scrollbar min-[350px]:my-2 md:mt-4">
 		<div class="mt-12 w-full h-2/3 overflow-scroll hide-scrollbar">
+			<!-- svelte-ignore a11y-missing-content -->
 			<a
 				class="twitter-timeline"
 				data-theme="dark"
-				href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw">Tweets by BRUHDWAJ</a
-			> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
+			></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>
 </div>
