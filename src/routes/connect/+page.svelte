@@ -1,8 +1,9 @@
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
-	let vh: number;
 
-	onMount(() => {
+	let vh;
+
+	onMount(async () => {
 		vh = window.innerHeight;
 	});
 </script>
@@ -32,6 +33,7 @@
 				href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
 			></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
+		<div class="mt-12 h-[75vh] lg:w-[50vh] overflow-scroll hide-scrollbar rounded-md"></div>
 	</div>
 </div>
 
