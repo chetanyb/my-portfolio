@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 
 	let vh;
+	export let profileData;
+	export let publicationsData;
 
 	onMount(async () => {
 		vh = window.innerHeight;
@@ -28,12 +30,12 @@
 				class="twitter-timeline"
 				data-theme="dark"
 				data-dnt="true"
+				data-tweet-limit="3"
 				data-height={0.75 * vh}
 				data-chrome="transparent noscrollbar"
 				href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
 			></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
-		<div class="mt-12 h-[75vh] lg:w-[50vh] overflow-scroll hide-scrollbar rounded-md"></div>
 	</div>
 </div>
 
