@@ -47,12 +47,15 @@ export async function load({ fetch }) {
 		});
 
 		const data = await response.json();
+		const profile = data.data.profile;
+		const publications = data.data.publications;
+		console.log(
+			`profile: ${JSON.stringify(profile)}\npublications: ${JSON.stringify(publications)}`
+		);
 
 		return {
-			props: {
-				profileData: data.data.profile,
-				publicationsData: data.data.publications
-			}
+			profile: await profile,
+			publications: await publications
 		};
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (error: any) {

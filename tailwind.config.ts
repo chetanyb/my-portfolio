@@ -14,7 +14,9 @@ export default {
 		extend: {
 			colors: {
 				maroon: '#3C1120',
-				'sita-orange': '#DF4E21'
+				'sita-orange': '#DF4E21',
+				'light-sky': '#DCDCDC',
+				'dark-lavender': '#DBCCF3'
 			},
 			fontFamily: {
 				kalam: ['Kalam', 'Noto Sans Devanagari', 'sans-serif'],
