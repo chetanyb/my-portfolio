@@ -47,16 +47,13 @@ export async function load({ fetch }) {
 		});
 
 		const data = await response.json();
-		const profile = data.data.profile;
-		const publications = data.data.publications;
-		console.log(
-			`profile: ${JSON.stringify(profile)}\npublications: ${JSON.stringify(publications)}`
-		);
-
-		return {
-			profile: await profile,
-			publications: await publications
-		};
+		console.log(data);
+		if (response.ok) {
+			return {
+				status: 200,
+				body: data
+			};
+		}
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (error: any) {
 		return {

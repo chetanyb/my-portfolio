@@ -2,9 +2,10 @@
 	import { onMount } from 'svelte';
 
 	let twitterHeight: number;
-	export let profile;
-	export let publications;
-	//export let publicationsData: PageData;
+	export let body;
+	export let status;
+	console.log(status);
+	console.log(body);
 
 	function setTwitterHeight() {
 		const vh = window.innerHeight;
@@ -26,15 +27,15 @@
 		class="flex flex-row justify-center group namaaste-cursor unselectable pb-2 md:pb-6 lg:pb-10 h-auto relative"
 	>
 		<h1
-			class="h1 flex justify-center py-3 absolute top-0 left-0 right-0 mx-auto text-center lg:py-6 group-hover:hidden"
+			class="text-4xl md:text-6xl flex font-love_notes justify-center py-3 absolute top-0 left-0 right-0 mx-auto text-center lg:py-6 group-hover:hidden"
 		>
 			Hello!<span class="hidden min-[350px]:block"> Nice to meet you!</span>
 		</h1>
-		<h2
+		<h1
 			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-4 md:py-6 lg:py-8 text-center hidden group-hover:block group-hover:flex"
 		>
 			नमस्ते!<span class="hidden min-[460px]:block flex-row">आपसे मिलकर अच्छा लगा!</span>
-		</h2>
+		</h1>
 	</div>
 	<div
 		class="flex-col md:flex-row md:flex w-full justify-center hide-scrollbar min-[350px]:my-2 md:my-6 lg:my-12"
