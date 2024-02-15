@@ -2,10 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let twitterHeight: number;
-	export let body;
-	export let status;
-	console.log(status);
-	console.log(body);
+	export let data;
 
 	function setTwitterHeight() {
 		const vh = window.innerHeight;
@@ -23,6 +20,7 @@
 </script>
 
 <div>
+	<!---->
 	<div
 		class="flex flex-row justify-center group namaaste-cursor unselectable pb-2 md:pb-6 lg:pb-10 h-auto relative"
 	>
