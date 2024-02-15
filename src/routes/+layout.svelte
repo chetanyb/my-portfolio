@@ -43,14 +43,7 @@
 				<a class="btn btn-sm variant-ghost-surface" href="/portfolio" rel="noreferrer">
 					Portfolio
 				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Connect
-				</a>
+				<a class="btn btn-sm variant-ghost-surface" href="/connect" rel="noreferrer"> Connect </a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
