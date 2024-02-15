@@ -2,15 +2,16 @@
 	import { onMount } from 'svelte';
 
 	let twitterHeight: number;
-	let twitterWidth: number;
 	export let data;
 
 	function setTwitterDimension() {
 		const vh = window.innerHeight;
 		const vw = window.innerWidth;
 		twitterHeight = (window.innerWidth <= 768 ? 0.4 : 0.75) * vh;
-		console.log(twitterHeight);
-		console.log(twitterWidth);
+	}
+
+	function handleLensClick() {
+		window.open('https://hey.xyz/u/chethack', '_blank');
 	}
 
 	onMount(() => {
@@ -57,34 +58,61 @@
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 
-		<!-- svelte-ignore a11y-missing-content -->
-		<div class="mt-12 mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col">
-			<div class="flex flex-row h-24">
-				<h4 class="h4 text-white !bg-transparent p-2 border-b-0">World Through My Lens</h4>
+		<button
+			class="mt-12 mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col"
+			on:click={handleLensClick}
+		>
+			<div class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500">
+				<div class="h-14 flex flex-row items-center">
+					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
+					<img src="lens.svg" alt="lens" class="h-12" />
+				</div>
+				<div class="flex items-center">
+					<!-- svelte-ignore a11y-img-redundant-alt -->
+					<img
+						class=" rounded-sm h-16 w-16 mx-4 my-2"
+						src={data.profile.metadata.picture.optimized.uri}
+						alt="lens profile picture"
+					/>
+					<div class="flex-col">
+						<div class="flex items-center">
+							<h4 class="h5 pr-8">{data.profile.metadata.displayName}</h4>
+							<div class="flex rounded-md">
+								<p class="px-4 border rounded-l">
+									Followers: {data.profile.stats.followers}
+								</p>
+								<p class="px-4 border-t border-r border-b rounded-r">
+									Following: {data.profile.stats.following}
+								</p>
+							</div>
+						</div>
+						<p class="">
+							{data.profile.metadata.bio}<br />
+						</p>
+					</div>
+				</div>
 			</div>
-			<div class="flex-grow overflow-auto mx-2 hide-scrollbar">
-				{data.profile.id}<br />
-				{data.profile.metadata.bio}<br />
-				{data.profile.metadata.displayName}<br />
-				{data.profile.metadata.picture.optimized.uri}<br />
-				{data.profile.stats.followers}<br />
-				{data.profile.stats.following}<br />
-				{data.profile.id}<br />
-				{data.profile.metadata.bio}<br />
-				{data.profile.metadata.displayName}<br />
-				{data.profile.metadata.picture.optimized.uri}<br />
-				{data.profile.stats.followers}<br />
-				{data.profile.stats.following}<br />
-
+			<div class="flex-grow overflow-auto hide-scrollbar text-white">
 				{#each data.publications.items as post}
-					{#if post.metadata}
-						{#if post.metadata.content}
-							<div>{post.metadata.content}</div>
-						{/if}
+					{#if post.metadata && post.metadata.content}
+						<div
+							class="flex hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500"
+						>
+							<!-- Align image to top -->
+							<div class="flex-shrink-0">
+								<img src="lenny.jfif" alt="lens post" class="h-10 w-10 rounded-full mx-4 my-2" />
+							</div>
+							<div class="flex flex-grow items-center">
+								<div class="flex-grow p-2 text-start">
+									<p class="text-slate-200 text-opacity-50 text-xs">@chethack.lens</p>
+									<div>{post.metadata.content}</div>
+								</div>
+							</div>
+						</div>
 					{/if}
 				{/each}
 			</div>
-		</div>
+		</button>
 	</div>
 </div>
 
