@@ -70,14 +70,19 @@
 				class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500"
 				on:click={handleLensProfileClick}
 			>
-				<div class="h-14 flex flex-row items-center">
+				<div class="h-14 flex flex-row items-center relative">
 					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
 					<img src="lens.svg" alt="lens" class="h-12" />
+					<p
+						class="hidden md:block absolute right-2 rounded-full border p-1 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
+					>
+						Follow on Lens
+					</p>
 				</div>
 				<div class="flex items-center">
 					<!-- svelte-ignore a11y-img-redundant-alt -->
 					<img
-						class=" rounded-sm h-16 w-16 mx-4 my-2"
+						class="rounded-sm h-16 w-16 mx-4 my-2"
 						src={data.profile.metadata.picture.optimized.uri}
 						alt="lens profile picture"
 					/>
