@@ -3,7 +3,6 @@
 
 	let twitterHeight: number;
 	export let data;
-	console.log(data);
 
 	function setTwitterDimension() {
 		const vh = window.innerHeight;
