@@ -3,6 +3,10 @@
 
 	let twitterHeight: number;
 	export let data;
+	const publications = data.publications.items;
+	const filteredPublications = publications
+		.filter((pub: { metadata: { content: any } }) => pub.metadata && pub.metadata.content)
+		.slice(0, 10);
 
 	function setTwitterDimension() {
 		const vh = window.innerHeight;
@@ -29,7 +33,6 @@
 </script>
 
 <div>
-	<!---->
 	<div
 		class="flex flex-row justify-center group namaaste-cursor unselectable pb-2 md:pb-6 lg:pb-10 h-auto relative"
 	>
@@ -97,27 +100,31 @@
 				</div>
 			</button>
 			<div class="flex-grow overflow-auto hide-scrollbar text-white">
-				{#each data.publications.items as post}
-					{#if post.metadata && post.metadata.content}
-						<button
-							class="flex hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500 w-full"
-							on:click={() => {
-								handleLensPostClick(post.stats.id);
-							}}
-						>
-							<!-- Align image to top -->
-							<div class="flex-shrink-0">
-								<img src="lenny.jfif" alt="lens post" class="h-10 w-10 rounded-full mx-4 my-2" />
+				{#each filteredPublications as post}
+					<button
+						class="flex hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500 w-full"
+						on:click={() => {
+							handleLensPostClick(post.stats.id);
+						}}
+					>
+						<div class="flex-shrink-0">
+							<img src="lenny.jfif" alt="lens post" class="h-10 w-10 rounded-full mx-4 my-2" />
+						</div>
+						<div class="flex flex-grow items-center">
+							<div class="flex-grow p-2 text-start">
+								<p class="text-slate-200 text-opacity-50 text-xs">@chethack.lens</p>
+								<div>{post.metadata.content}</div>
 							</div>
-							<div class="flex flex-grow items-center">
-								<div class="flex-grow p-2 text-start">
-									<p class="text-slate-200 text-opacity-50 text-xs">@chethack.lens</p>
-									<div>{post.metadata.content}</div>
-								</div>
-							</div>
-						</button>
-					{/if}
+						</div>
+					</button>
 				{/each}
+				<button class="w-full p-2" on:click={handleLensProfileClick}>
+					<p
+						class="text-white p-2 border rounded-full hover:bg-pink-400 hover:bg-opacity-10 transition-colors duration-500"
+					>
+						Visit my profile
+					</p>
+				</button>
 			</div>
 		</div>
 	</div>
