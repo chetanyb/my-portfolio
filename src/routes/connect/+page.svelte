@@ -3,6 +3,7 @@
 
 	let twitterHeight: number;
 	export let data;
+	console.log(data);
 
 	function setTwitterDimension() {
 		const vh = window.innerHeight;
@@ -10,8 +11,12 @@
 		twitterHeight = (window.innerWidth <= 768 ? 0.4 : 0.75) * vh;
 	}
 
-	function handleLensClick() {
+	function handleLensProfileClick() {
 		window.open('https://hey.xyz/u/chethack', '_blank');
+	}
+
+	function handleLensPostClick(id: string) {
+		window.open(`https://hey.xyz/posts/${id}`, '_blank');
 	}
 
 	onMount(() => {
@@ -58,11 +63,11 @@
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 
-		<button
-			class="mt-12 mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col"
-			on:click={handleLensClick}
-		>
-			<div class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500">
+		<div class="mt-12 mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col">
+			<button
+				class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500"
+				on:click={handleLensProfileClick}
+			>
 				<div class="h-14 flex flex-row items-center">
 					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
 					<img src="lens.svg" alt="lens" class="h-12" />
@@ -86,17 +91,20 @@
 								</p>
 							</div>
 						</div>
-						<p class="">
+						<p class="text-start">
 							{data.profile.metadata.bio}<br />
 						</p>
 					</div>
 				</div>
-			</div>
+			</button>
 			<div class="flex-grow overflow-auto hide-scrollbar text-white">
 				{#each data.publications.items as post}
 					{#if post.metadata && post.metadata.content}
-						<div
-							class="flex hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500"
+						<button
+							class="flex hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500 w-full"
+							on:click={() => {
+								handleLensPostClick(post.stats.id);
+							}}
 						>
 							<!-- Align image to top -->
 							<div class="flex-shrink-0">
@@ -108,11 +116,11 @@
 									<div>{post.metadata.content}</div>
 								</div>
 							</div>
-						</div>
+						</button>
 					{/if}
 				{/each}
 			</div>
-		</button>
+		</div>
 	</div>
 </div>
 

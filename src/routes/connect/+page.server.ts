@@ -33,6 +33,9 @@ export async function load({ fetch }) {
               content
             }
           }
+          stats {
+            id
+          }
         }
       }
     }
