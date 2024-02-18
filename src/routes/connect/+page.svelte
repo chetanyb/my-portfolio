@@ -189,7 +189,18 @@
 					</div>
 				</div>
 			</div>
-			<div>hello</div>
+			<div class="h-full m-2 bg-black bg-opacity-15">
+				<div
+					class="flex h-full rounded-lg !bg-transparent items-center justify-center border border-slate-500 border-opacity-25"
+				>
+					<button
+						class="border rounded-lg p-2"
+						on:click={() => window.open('emailto:chetany@sita.farm')}
+					>
+						<p class="text-white p-2">Write me an email</p>
+					</button>
+				</div>
+			</div>
 		</div>
 		<div
 			class="mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
