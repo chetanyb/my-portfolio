@@ -195,7 +195,7 @@
 				>
 					<button
 						class="border rounded-lg p-2"
-						on:click={() => window.open('emailto:chetany@sita.farm')}
+						on:click={() => window.open('mailto:chetany@sita.farm')}
 					>
 						<p class="text-white p-2">Write me an email</p>
 					</button>
