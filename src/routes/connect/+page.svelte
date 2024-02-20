@@ -78,7 +78,7 @@
 					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
 					<img src="lens.svg" alt="lens" class="h-12" />
 					<p
-						class="hidden md:block absolute right-2 rounded-full border p-1 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
+						class="hidden md:block absolute right-2 rounded-full border py-1 px-4 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
 					>
 						Follow on Lens
 					</p>
@@ -175,7 +175,7 @@
 							</div>
 							<div class="group unselectable text-md px-2 py-1">
 								<p class="group-hover:hidden">
-									Software engineer | Blockchain Beever | Cloud Native | IoT Connected
+									Software engineer | Blockchain beever | Cloud native | IoT connected
 								</p>
 								<p class="hidden group-hover:block animate-bounce">LIFE ENTHUSIAST</p>
 							</div>
@@ -193,17 +193,21 @@
 					</div>
 				</div>
 			</div>
-			<div class="h-full m-2 bg-black bg-opacity-15">
-				<div
-					class="flex h-full rounded-lg !bg-transparent items-center justify-center border border-slate-500 border-opacity-25"
-				>
-					<button
-						class="border rounded-lg p-2"
-						on:click={() => window.open('mailto:chetany@sita.farm')}
-					>
-						<p class="text-white p-2">Write me an email</p>
-					</button>
+			<div
+				class="h-full m-2 bg-black bg-opacity-15 flex flex-col items-center justify-between rounded-lg border border-slate-500 border-opacity-25 relative"
+			>
+				<div class="w-full flex flow-row bg-orange-700 bg-opacity-5 items-start p-2">
+					<h3 class="h3 flex-none text-white px-2">Write me an email</h3>
+					<img src="email.png" alt="email" class="invert h-8" />
 				</div>
+				<p>Questions, job opportunities, or just to say hi!</p>
+
+				<button
+					class="border rounded-lg m-2 hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500"
+					on:click={() => window.open('mailto:chetany@sita.farm')}
+				>
+					<p class="text-white p-2 flap">chetany@sita.farm</p>
+				</button>
 			</div>
 		</div>
 		<div
