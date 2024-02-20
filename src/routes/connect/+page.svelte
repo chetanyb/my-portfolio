@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
 	let twitterHeight: number;
@@ -196,9 +195,9 @@
 			<div
 				class="h-full m-2 bg-black bg-opacity-15 flex flex-col items-center justify-between rounded-lg border border-slate-500 border-opacity-25 relative"
 			>
-				<div class="w-full flex flow-row bg-orange-700 bg-opacity-5 items-start p-2">
-					<h3 class="h3 flex-none text-white px-2">Write me an email</h3>
-					<img src="email.png" alt="email" class="invert h-8" />
+				<div class="w-full flex flow-row items-center bg-orange-700 bg-opacity-5 p-2">
+					<h3 class="h3 text-white px-2">Write me an email</h3>
+					<img src="email.png" alt="email" class="invert h-6" />
 				</div>
 				<p>Questions, job opportunities, or just to say hi!</p>
 
