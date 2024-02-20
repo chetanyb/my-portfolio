@@ -117,7 +117,11 @@
 						}}
 					>
 						<div class="flex-shrink-0">
-							<img src="lenny.jfif" alt="lens post" class="h-10 w-10 rounded-full mx-4 my-2" />
+							<img
+								src="https://raw.seadn.io/files/5ae7fd7f4e447480699318309ec13f53.svg"
+								alt="lens post"
+								class="h-10 w-10 rounded-full mx-4 my-2"
+							/>
 						</div>
 						<div class="flex flex-grow items-center">
 							<div class="flex-grow p-2 text-start">
