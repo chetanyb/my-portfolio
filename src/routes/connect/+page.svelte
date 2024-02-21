@@ -85,14 +85,14 @@
 				<div class="flex items-center">
 					<!-- svelte-ignore a11y-img-redundant-alt -->
 					<img
-						class="rounded-sm h-16 w-16 mx-4 my-2"
+						class="rounded-sm h-12 w-12 md:h-16 md:w-16 mx-4 my-2"
 						src={data.profile.metadata.picture.optimized.uri}
 						alt="lens profile picture"
 					/>
 					<div class="flex-col">
 						<div class="flex items-center">
 							<h4 class="h5 pr-8">{data.profile.metadata.displayName}</h4>
-							<div class="flex rounded-md">
+							<div class="hidden md:flex md:block rounded-md">
 								<p class="px-4 border rounded-l">
 									Followers: {data.profile.stats.followers}
 								</p>
@@ -101,7 +101,7 @@
 								</p>
 							</div>
 						</div>
-						<p class="text-start">
+						<p class="hidden md:block text-start">
 							{data.profile.metadata.bio}<br />
 						</p>
 					</div>
@@ -119,13 +119,13 @@
 							<img
 								src="https://raw.seadn.io/files/5ae7fd7f4e447480699318309ec13f53.svg"
 								alt="lens post"
-								class="h-10 w-10 rounded-full mx-4 my-2"
+								class="h-8 w-8 md:h-10 md:w-10 rounded-full mx-4 my-2"
 							/>
 						</div>
 						<div class="flex flex-grow items-center">
 							<div class="flex-grow p-2 text-start">
 								<p class="text-slate-200 text-opacity-50 text-xs">@chethack.lens</p>
-								<div>{post.metadata.content}</div>
+								<div class="text-sm">{post.metadata.content}</div>
 							</div>
 						</div>
 					</button>
@@ -140,25 +140,25 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex py-4">
+	<div class="flex flex-col md:flex-row md:py-4">
 		<div
-			class="mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="mx-2 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
 		>
 			<div class="flex flex-col border rounded-lg border-slate-500 border-opacity-25 m-2">
 				<div class="flex items-center bg-white bg-opacity-10 rounded-t-lg">
-					<img src="linkedin.png" alt="linkedin" class="h-12 p-2" />
+					<img src="linkedin.png" alt="linkedin" class="h-10 p-2" />
 				</div>
 				<div class="flex flex-col bg-black rounded-b-lg bg-opacity-15">
-					<div class="flex flex-row items-center">
+					<div class="flex flex-row md:items-center">
 						<img
 							src="https://media.licdn.com/dms/image/C4D03AQE1SIqATg94Lw/profile-displayphoto-shrink_200_200/0/1658836970805?e=1713398400&v=beta&t=rr9YJTZtdpenK1hmoQsZdIAqS_FnziK39xzRcx19iro"
 							alt="linkedin profile"
-							class="h-16 w-16 rounded-full mx-4 my-2"
+							class="h-9 w-9 md:h-16 md:w-16 rounded-full mx-4 my-2"
 						/>
 						<div class="flex flex-col w-full">
 							<div class="flex flex-row justify-between">
 								<button
-									class="text-xl px-2 pt-4 hover:underline"
+									class="text-base md:text-xl px-2 pt-4 hover:underline"
 									on:click={() =>
 										window.open('https://www.linkedin.com/in/chetanybhardwaj/, _blank')}
 									>Chetany Bhardwaj</button
@@ -193,26 +193,27 @@
 				</div>
 			</div>
 			<div
-				class="h-full m-2 bg-black bg-opacity-15 flex flex-col items-center justify-between rounded-lg border border-slate-500 border-opacity-25 relative"
+				class="h-full m-2 mt-0 bg-black bg-opacity-15 flex flex-col items-center justify-between rounded-lg border border-slate-500 border-opacity-25 relative"
 			>
 				<div class="w-full flex flow-row items-center bg-orange-700 bg-opacity-5 p-2">
 					<h3 class="h3 text-white px-2">Write me an email</h3>
 					<img src="email.png" alt="email" class="invert h-6" />
 				</div>
-				<p>Questions, job opportunities, or just to say hi!</p>
+				<p class="hidden md:block text-base">Questions, job opportunities, or just to say hi!</p>
 
 				<button
 					class="border rounded-lg m-2 hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500"
 					on:click={() => window.open('mailto:chetany@sita.farm')}
 				>
-					<p class="text-white p-2 flap">chetany@sita.farm</p>
+					<p class="text-white m-2">chetany@sita.farm</p>
 				</button>
 			</div>
 		</div>
 		<div
 			class="mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
 		>
-			<p>SWAG</p>
+			<h3 class="h3 text-white p-2">Get a memorial of this visit</h3>
+			<h6 class="p-2 font-sans">Scan this QR to get your POAP</h6>
 		</div>
 	</div>
 </div>
