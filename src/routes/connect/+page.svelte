@@ -155,7 +155,7 @@
 							alt="linkedin profile"
 							class="h-9 w-9 md:h-16 md:w-16 rounded-full mx-4 my-2"
 						/>
-						<div class="flex flex-col w-full">
+						<div class="flex flex-col w-[100vw] md:w-[40vw] truncate">
 							<div class="flex flex-row justify-between">
 								<button
 									class="text-base md:text-xl px-2 pt-4 hover:underline"
