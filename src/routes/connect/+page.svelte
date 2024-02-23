@@ -42,7 +42,7 @@
 			Hello!<span class="hidden min-[350px]:block"> Nice to meet you!</span>
 		</h1>
 		<h1
-			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-4 md:py-6 lg:py-4 text-center hidden group-hover:block group-hover:flex"
+			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-2 md:pb-6 lg:py-4 text-center hidden group-hover:block group-hover:flex"
 		>
 			नमस्ते!<span class="hidden min-[460px]:block flex-row">आपसे मिलकर अच्छा लगा!</span>
 		</h1>
