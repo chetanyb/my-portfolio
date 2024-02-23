@@ -42,7 +42,7 @@
 			Hello!<span class="hidden min-[350px]:block"> Nice to meet you!</span>
 		</h1>
 		<h1
-			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-2 md:pb-6 lg:py-4 text-center hidden group-hover:block group-hover:flex"
+			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-2 sm:py-4 md:pb-6 lg:py-4 text-center hidden group-hover:block group-hover:flex"
 		>
 			नमस्ते!<span class="hidden min-[460px]:block flex-row">आपसे मिलकर अच्छा लगा!</span>
 		</h1>
@@ -124,7 +124,7 @@
 						<div class="flex flex-grow items-center">
 							<div class="flex-grow p-2 text-start">
 								<p class="text-slate-200 text-opacity-50 text-xs">@chethack.lens</p>
-								<div class="text-sm">{post.metadata.content}</div>
+								<div class="text-base">{post.metadata.content}</div>
 							</div>
 						</div>
 					</button>
@@ -157,7 +157,7 @@
 						<div class="flex flex-col w-[100vw] md:w-[40vw] truncate">
 							<div class="flex flex-row justify-between">
 								<button
-									class="text-base md:text-xl px-2 pt-4 hover:underline"
+									class="text-base md:text-xl lg:text-2xl px-2 pt-4 hover:underline"
 									on:click={() =>
 										window.open('https://www.linkedin.com/in/chetanybhardwaj/, _blank')}
 									>Chetany Bhardwaj</button
@@ -199,7 +199,9 @@
 					<h3 class="h3 text-white px-2">Write me an email</h3>
 					<img src="email.png" alt="email" class="invert h-6" />
 				</div>
-				<p class="hidden md:block text-base">Questions, job opportunities, or just to say hi!</p>
+				<p class="hidden md:block text-base lg:text-xl">
+					Questions, job opportunities, or just to say hi!
+				</p>
 
 				<button
 					class="border rounded-lg m-2 hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500"
