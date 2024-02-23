@@ -11,7 +11,6 @@
 
 	function setTwitterDimension() {
 		const vh = window.innerHeight;
-		const vw = window.innerWidth;
 		twitterHeight = (window.innerWidth <= 768 ? 0.4 : 0.75) * vh;
 	}
 
@@ -35,15 +34,15 @@
 
 <div>
 	<div
-		class="flex flex-row justify-center group namaaste-cursor unselectable pb-10 md:pb-6 lg:pb-10 h-auto relative"
+		class="flex flex-row justify-center group namaaste-cursor unselectable pb-10 lg:pb-4 h-auto relative"
 	>
 		<h1
-			class="text-4xl md:text-6xl flex font-love_notes justify-center absolute top-0 left-0 right-0 mx-auto text-center lg:py-4 group-hover:hidden"
+			class="text-4xl md:text-6xl flex font-love_notes justify-center absolute top-0 left-0 right-0 mx-auto text-center group-hover:hidden"
 		>
 			Hello!<span class="hidden min-[350px]:block"> Nice to meet you!</span>
 		</h1>
 		<h1
-			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-4 md:py-6 lg:py-8 text-center hidden group-hover:block group-hover:flex"
+			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-4 md:py-6 lg:py-4 text-center hidden group-hover:block group-hover:flex"
 		>
 			नमस्ते!<span class="hidden min-[460px]:block flex-row">आपसे मिलकर अच्छा लगा!</span>
 		</h1>
@@ -52,7 +51,7 @@
 		class="flex-col mb-4 md:mb-0 md:flex-row md:flex w-full justify-center hide-scrollbar min-[350px]:mt-2 md:mt-6 lg:mt-12"
 	>
 		<div
-			class="mx-2 mb-4 md:mb-0 h-[40vh] lg:w-[50vw] card overflow-scroll hide-scrollbar rounded-md !bg-transparent variant-outline"
+			class="mx-2 mb-4 md:mb-0 h-[40vh] md:w-[50vw] min-[798px]:max-w-[48vw] card overflow-scroll hide-scrollbar rounded-md !bg-transparent variant-outline"
 		>
 			<!-- svelte-ignore a11y-missing-content -->
 			<a
@@ -67,7 +66,7 @@
 		</div>
 
 		<div
-			class="mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="mx-2 h-[40vh] md:w-[50vw] md:max-w-[48vw] card rounded-md !bg-transparent flex flex-col variant-outline"
 		>
 			<button
 				class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500"
@@ -77,9 +76,9 @@
 					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
 					<img src="lens.svg" alt="lens" class="h-12" />
 					<p
-						class="hidden md:block absolute right-2 rounded-full border py-1 px-4 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
+						class="hidden min-[910px]:block lg:flex absolute right-2 rounded-full border py-1 px-4 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
 					>
-						Follow on Lens
+						Follow<span class="hidden min-[1050px]:block" style="margin-left: 4px;">on Lens</span>
 					</p>
 				</div>
 				<div class="flex items-center">
@@ -92,7 +91,7 @@
 					<div class="flex-col">
 						<div class="flex items-center">
 							<h4 class="h5 pr-8">{data.profile.metadata.displayName}</h4>
-							<div class="hidden md:flex md:block rounded-md">
+							<div class="hidden lg:block lg:flex rounded-md">
 								<p class="px-4 border rounded-l">
 									Followers: {data.profile.stats.followers}
 								</p>
@@ -140,7 +139,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex flex-col md:flex-row md:py-4">
+	<div class="flex flex-col mb-4 md:flex-row md:py-4">
 		<div
 			class="mx-2 mb-4 md:mb-0 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
 		>
@@ -186,7 +185,8 @@
 							class="flex justify-center border rounded-full w-full inner-glow px-4"
 							on:click={() => window.open('https://www.linkedin.com/in/chetanybhardwaj/, _blank')}
 						>
-							<span class="hidden sm:block" style="margin-right: 4px;">View profile and</span
+							<span class="hidden sm:block md:hidden min-[784px]:block" style="margin-right: 4px;"
+								>View profile and</span
 							>Connect on Linkedin
 						</button>
 					</div>
@@ -210,7 +210,7 @@
 			</div>
 		</div>
 		<div
-			class="mx-2 h-[40vh] lg:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="mx-2 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
 		>
 			<h3 class="h3 text-white p-2">Get a memorial of this visit</h3>
 			<h6 class="p-2 font-sans">Scan this QR to get your POAP</h6>
