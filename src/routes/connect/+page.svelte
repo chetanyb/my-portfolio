@@ -35,7 +35,7 @@
 
 <div>
 	<div
-		class="flex flex-row justify-center group namaaste-cursor unselectable pb-2 md:pb-6 lg:pb-10 h-auto relative"
+		class="flex flex-row justify-center group namaaste-cursor unselectable pb-10 md:pb-6 lg:pb-10 h-auto relative"
 	>
 		<h1
 			class="text-4xl md:text-6xl flex font-love_notes justify-center absolute top-0 left-0 right-0 mx-auto text-center lg:py-4 group-hover:hidden"
@@ -49,10 +49,10 @@
 		</h1>
 	</div>
 	<div
-		class="flex-col md:flex-row md:flex w-full justify-center hide-scrollbar min-[350px]:mt-2 md:ty-6 lg:mt-12"
+		class="flex-col mb-4 md:mb-0 md:flex-row md:flex w-full justify-center hide-scrollbar min-[350px]:mt-2 md:mt-6 lg:mt-12"
 	>
 		<div
-			class="mx-2 h-[40vh] lg:w-[50vw] card overflow-scroll hide-scrollbar rounded-md !bg-transparent variant-outline"
+			class="mx-2 mb-4 md:mb-0 h-[40vh] lg:w-[50vw] card overflow-scroll hide-scrollbar rounded-md !bg-transparent variant-outline"
 		>
 			<!-- svelte-ignore a11y-missing-content -->
 			<a
@@ -142,7 +142,7 @@
 	</div>
 	<div class="flex flex-col md:flex-row md:py-4">
 		<div
-			class="mx-2 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="mx-2 mb-4 md:mb-0 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
 		>
 			<div class="flex flex-col border rounded-lg border-slate-500 border-opacity-25 m-2">
 				<div class="flex items-center bg-white bg-opacity-10 rounded-t-lg">
