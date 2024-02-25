@@ -23,13 +23,13 @@
 	</div>
 	<!--Creating cards for each projects-->
 	<div class="w-screen flex-col sm:flex-row sm:flex px-10">
-		<div class="w-full sm:w-1/4 block card-hover card p-4 m-4 !bg-transparent">
+		<div class="w-full sm:w-1/4 block card-hover card m-4 !bg-transparent">
 			<div
-				class="-m-4 h-16 rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
+				class="h-16 flex items-baseline justify-between rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-t-sm rounded-b-none"
 			>
 				<img src="/projects/sita.png" alt="sita-logo" class="h-28 p-4" />
+				<h3 class="h3 text-3xl">SITA</h3>
 			</div>
-			<h3 class="h3 flex justify-end text-3xl">SITA</h3>
 			<p class="m-8">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus laborum nobis
 				molestiae quis. Dolorem totam perspiciatis maiores. Non maiores excepturi quo inventore,
