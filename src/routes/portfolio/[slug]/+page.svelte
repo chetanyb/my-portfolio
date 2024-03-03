@@ -19,7 +19,7 @@
 				{#each Object.keys(data.project?.links) as link}
 					{#if data.project?.links[link] != null}
 						<a
-							class="logo-item variant-ghost w-full sm:w-auto"
+							class="logo-item variant-ghost w-full sm:w-auto overflow-hidden"
 							href={data.project?.links[link].url}
 							target="_blank"
 						>
