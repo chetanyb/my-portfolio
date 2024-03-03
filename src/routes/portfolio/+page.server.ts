@@ -1,5 +1,6 @@
 import type { PageServerLoad } from './$types';
+import projects from '$lib/projects';
 
 export const load = (async () => {
-	return {};
+	return { projects };
 }) satisfies PageServerLoad;
