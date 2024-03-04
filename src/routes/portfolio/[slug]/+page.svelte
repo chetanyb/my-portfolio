@@ -81,7 +81,7 @@
 					<div class="pl-4">
 						<p class="h6">{key}</p>
 						<ul class="list-disc pl-6 flex flex-wrap">
-							{#each value.split('\n') as line}
+							{#each value as line}
 								{#if line.length > 20 && key != 'Team'}
 									<li class="w-full">{@html line}</li>
 								{:else}
