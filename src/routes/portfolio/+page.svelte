@@ -7,6 +7,22 @@
 
 	export let data;
 
+	let showFilters = false;
+
+	function toggleFilters() {
+		showFilters = !showFilters;
+	}
+
+	let tags: Record<string, boolean> = {
+		Cloud: true,
+		IoT: true,
+		Blockchain: true
+	};
+
+	function toggle(tag: string): void {
+		tags[tag] = !tags[tag];
+	}
+
 	function chunkProjects(array: any[], size: number) {
 		return array.reduce((acc, e, i) => {
 			let chunk = acc[acc.length - 1];
@@ -35,7 +51,20 @@
 			</h2>
 		</div>
 		<div class="flex items-center justify-center pt-2 lg:pt-0 lg:absolute lg:right-5 mx-10">
-			<span class="chip variant-ghost-surface mx-4 text-sm">Filter</span>
+			<button class="chip variant-ghost-surface mx-4 text-sm">Filter</button>
+			{#each Object.keys(tags) as tag}
+				<button
+					class="chip mx-2 text-sm transition-colors duration-500 ease-in-out {tags[tag]
+						? 'bg-gradient-to-br from-yellow-500 via-yellow-300 from-15% to-yellow-700 text-slate-600'
+						: 'variant-ghost-surface opacity-75'}"
+					on:click={() => {
+						toggle(tag);
+					}}
+					on:keypress
+				>
+					<span class="capitalize">{tag}</span>
+				</button>
+			{/each}
 		</div>
 	</div>
 	<!--Creating cards for each projects-->
