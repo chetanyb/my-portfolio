@@ -42,12 +42,10 @@
 <div>
 	<div class="flex-col sm:flex justify-center item-center my-10">
 		<div class="w-full flex justify-center">
-			<h2 class="h2">
-				<span
-					class="bg-gradient-to-br from-yellow-500 to-yellow-700 bg-clip-text text-transparent box-decoration-clone"
-				>
-					Portfolio
-				</span>
+			<h2
+				class="h2 bg-gradient-to-br from-yellow-500 to-yellow-700 bg-clip-text text-transparent box-decoration-clone"
+			>
+				Portfolio
 			</h2>
 		</div>
 		<div class="flex items-center justify-center pt-2 lg:pt-0 lg:absolute lg:right-5 mx-10">
