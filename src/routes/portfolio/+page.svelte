@@ -58,7 +58,6 @@
 					on:click={() => {
 						toggle(tag);
 					}}
-					on:keypress
 				>
 					<span class="capitalize">{tag}</span>
 				</button>
