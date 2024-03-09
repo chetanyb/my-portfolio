@@ -19,6 +19,20 @@
 		Blockchain: true
 	};
 
+	let filteredProjects: object[] = [];
+
+	$: {
+		filteredProjects = data.projects.filter((project) => {
+			return Object.keys(tags).some((tag) => tags[tag] && project.tags.includes(tag.toLowerCase()));
+		});
+	}
+
+	let projectChunks: object[] = [];
+
+	$: {
+		projectChunks = chunkProjects(filteredProjects, 4);
+	}
+
 	function toggle(tag: string): void {
 		tags[tag] = !tags[tag];
 	}
@@ -35,8 +49,6 @@
 			return acc;
 		}, []);
 	}
-
-	let projectChunks = chunkProjects(data.projects, 4);
 </script>
 
 <div>
