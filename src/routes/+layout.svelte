@@ -32,14 +32,7 @@
 				<strong class="text-xl uppercase">chethack</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Blog
-				</a>
+				<a class="btn btn-sm variant-ghost-surface" href="/blog" rel="noreferrer"> Blog </a>
 				<a class="btn btn-sm variant-ghost-surface" href="/portfolio" rel="noreferrer">
 					Portfolio
 				</a>
