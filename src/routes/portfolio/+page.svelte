@@ -61,7 +61,6 @@
 			</h2>
 		</div>
 		<div class="flex items-center justify-center pt-2 lg:pt-0 lg:absolute lg:right-5 mx-10">
-			<button class="chip variant-ghost-surface mx-4 text-sm">Filter</button>
 			{#each Object.keys(tags) as tag}
 				<button
 					class="chip mx-2 text-sm transition-colors duration-500 ease-in-out {tags[tag]
