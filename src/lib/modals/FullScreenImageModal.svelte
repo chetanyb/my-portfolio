@@ -6,7 +6,6 @@
 		modalStore.update((current) => ({ ...current, visible: false }));
 	}
 
-	// Add the event listener for the escape key in onMount to ensure it's client-side
 	onMount(() => {
 		const handleKeyPress = (event) => {
 			if (event.key === 'Escape') {
@@ -14,10 +13,8 @@
 			}
 		};
 
-		// Since onMount runs in the client, window will be defined here
 		window.addEventListener('keydown', handleKeyPress);
 
-		// Return a cleanup function to remove the event listener
 		return () => {
 			window.removeEventListener('keydown', handleKeyPress);
 		};
