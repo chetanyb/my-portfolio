@@ -54,11 +54,7 @@
 <div>
 	<div class="flex-col sm:flex justify-center item-center my-10">
 		<div class="w-full flex justify-center">
-			<h2
-				class="h2 bg-gradient-to-br from-yellow-500 to-yellow-700 bg-clip-text text-transparent box-decoration-clone"
-			>
-				Portfolio
-			</h2>
+			<h2 class="h2 gradient-animation">Portfolio</h2>
 		</div>
 		<div class="flex items-center justify-center pt-2 lg:pt-0 lg:absolute lg:right-5 mx-10">
 			{#each Object.keys(tags) as tag}
@@ -106,3 +102,23 @@
 		</div>
 	{/each}
 </div>
+
+<style>
+	.h2 {
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-image: linear-gradient(90deg, #fbbf24, #f59e0b);
+		background-size: 400%;
+		animation: gradient-animation 2s infinite alternate linear;
+	}
+
+	@keyframes gradient-animation {
+		0% {
+			background-position: 0%;
+		}
+		100% {
+			background-position: 100%;
+		}
+	}
+</style>
