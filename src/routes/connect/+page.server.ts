@@ -1,3 +1,4 @@
+//TODO: switch to CMS for this page
 export async function load({ fetch }) {
 	try {
 		const query = `query GetProfile {
