@@ -1,3 +1,4 @@
+//TODO: switch to CMS for this page
 import projects from '$lib/projects';
 
 export async function load({ params }) {
