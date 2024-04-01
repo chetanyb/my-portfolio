@@ -1,5 +1,10 @@
 <script lang="ts">
 	//export let data;
+	import { goto } from '$app/navigation';
+
+	function navigateToBlog(blogName: string) {
+		goto(`/blog/${blogName}`);
+	}
 </script>
 
 <div>
