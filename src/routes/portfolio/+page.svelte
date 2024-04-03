@@ -76,7 +76,7 @@
 		<div class="w-full flex flex-col md:flex-row pr-4 md:pr-0">
 			{#each chunk as project}
 				<button
-					class="w-full m-2 block card-hover card !bg-transparent relative overflow-hidden"
+					class="w-full m-2 card-hover card !bg-transparent relative overflow-hidden"
 					on:click={() => navigateToProject(project.slug)}
 				>
 					<div
