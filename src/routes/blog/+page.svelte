@@ -12,7 +12,7 @@
 		<h2 class="h2 p-4">Blogs</h2>
 	</div>
 	<div class="flex w-full justify-center px-5 py-2">
-		<button class="w-auto card card-hover m-2">
+		<button class="w-auto card card-hover m-2" on:click={() => goto('slug')}>
 			<img
 				src="https://via.placeholder.com/300x100"
 				alt="placeholder"
