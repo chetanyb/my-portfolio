@@ -30,6 +30,10 @@
 			<hr />
 			<div class="flex flex-row justify-between py-2 px-4">
 				<p>By Chetany Bhardwaj</p>
+				<div>
+					<div class="badge variant-ghost mx-1">Philosophy</div>
+					<div class="badge variant-ghost mx-1">Technology</div>
+				</div>
 				<time datetime="2024-03-16">16 March, 2024</time>
 			</div>
 		</button>
