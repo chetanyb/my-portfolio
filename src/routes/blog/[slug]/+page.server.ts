@@ -1,5 +1,5 @@
 //TODO: switch to CMS for this page
-import blogs from '$lib/blogs.js';
+import { STRAPI_URL, STRAPI_TOKEN } from '$env/static/private';
 
 export async function load({ params }) {
 	const blogName = params.slug;
