@@ -1,4 +1,3 @@
-//TODO: switch to CMS for this page
 import { STRAPI_URL, STRAPI_TOKEN } from '$env/static/private';
 
 //making a request to the strapi api
