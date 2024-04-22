@@ -1,5 +1,4 @@
 import type { PageServerLoad } from './$types';
-//import blogs from '$lib/blogs';
 import { STRAPI_URL, STRAPI_TOKEN } from '$env/static/private';
 
 //making a request to the strapi api
