@@ -29,7 +29,7 @@
 		<!-- App Bar -->
 		<AppBar gap="gap-x-2" padding="p-2">
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">chethack</strong>
+				<strong class="text-xl uppercase"><a href="/">chethack</a></strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a class="btn btn-sm variant-ghost-surface" href="/blog" rel="noreferrer"> Blog </a>
