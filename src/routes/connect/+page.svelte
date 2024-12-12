@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let twitterHeight: number;
+	let twitterWidgetLoaded = false;
 
 	export let data;
 	const publications = data.publications.items;
@@ -26,15 +27,28 @@
 		setTwitterDimension();
 		window.addEventListener('resize', setTwitterDimension);
 
+		// Dynamically load Twitter widgets script
+		const script = document.createElement('script');
+		script.src = 'https://platform.twitter.com/widgets.js';
+		script.async = true;
+		script.onload = () => {
+			twitterWidgetLoaded = true;
+			if (window.twttr && window.twttr.widgets) {
+				window.twttr.widgets.load();
+			}
+		};
+		document.body.appendChild(script);
+
 		return () => {
 			window.removeEventListener('resize', setTwitterDimension);
+			document.body.removeChild(script);
 		};
 	});
 </script>
 
 <div>
 	<div
-		class="flex flex-row justify-center group namaaste-cursor unselectable pb-10 lg:pb-4 h-auto relative"
+		class="flex flex-row justify-center group namaste-cursor unselectable pb-10 lg:pb-4 h-auto relative"
 	>
 		<h1
 			class="text-4xl md:text-6xl flex font-love_notes justify-center absolute top-0 left-0 right-0 mx-auto text-center group-hover:hidden"
@@ -51,22 +65,25 @@
 		class="flex-col mb-4 md:mb-0 md:flex-row md:flex w-full justify-center hide-scrollbar min-[350px]:mt-2 md:mt-6 lg:mt-12"
 	>
 		<div
-			class="mx-2 mb-4 md:mb-0 h-[40vh] md:w-[50vw] min-[798px]:max-w-[48vw] card overflow-scroll hide-scrollbar rounded-md !bg-transparent variant-outline"
+			class="flex-child overflow-scroll hide-scrollbar !bg-transparent"
 		>
-			<!-- svelte-ignore a11y-missing-content -->
-			<a
-				class="twitter-timeline"
-				data-theme="dark"
-				data-dnt="true"
-				data-height={twitterHeight}
-				data-chrome="transparent noscrollbar noborders"
-				href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
-			></a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			{#if twitterWidgetLoaded}
+				<a
+					class="twitter-timeline"
+					data-theme="dark"
+					href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
+  				data-dnt="true"
+					data-height={twitterHeight}
+					data-chrome="transparent noscrollbar noborders"
+				>
+					Tweets by @BRUHDWAJ
+				</a>
+			{/if}
 		</div>
 
+
 		<div
-			class="mx-2 h-[40vh] md:w-[50vw] md:max-w-[48vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="flex-child overflow-scroll hide-scrollbar !bg-transparent"
 		>
 			<button
 				class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500"
@@ -139,9 +156,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex flex-col mb-4 md:flex-row md:py-4">
+	<div class="flex-col mb-4 md:flex-row md:flex w-full justify-center hide-scrollbar md:py-4">
 		<div
-			class="mx-2 mb-4 md:mb-0 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="flex-child overflow-scroll hide-scrollbar !bg-transparent"
 		>
 			<div class="flex flex-col border rounded-lg border-slate-500 border-opacity-25 m-2">
 				<div class="flex items-center bg-white bg-opacity-10 rounded-t-lg">
@@ -150,7 +167,7 @@
 				<div class="flex flex-col bg-black rounded-b-lg bg-opacity-15">
 					<div class="flex flex-row md:items-center">
 						<img
-							src="https://media.licdn.com/dms/image/C4D03AQE1SIqATg94Lw/profile-displayphoto-shrink_200_200/0/1658836970805?e=1713398400&v=beta&t=rr9YJTZtdpenK1hmoQsZdIAqS_FnziK39xzRcx19iro"
+							src="https://media.licdn.com/dms/image/v2/C4D03AQE1SIqATg94Lw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1658836970805?e=1739404800&v=beta&t=XMl7TZaXKekKea6GOLt0S-oV8xNlFtqohvO84IiTd3Q"
 							alt="linkedin profile"
 							class="h-9 w-9 md:h-16 md:w-16 rounded-full mx-4 my-2"
 						/>
@@ -212,7 +229,7 @@
 			</div>
 		</div>
 		<div
-			class="mx-2 h-[40vh] md:w-[50vw] card rounded-md !bg-transparent flex flex-col variant-outline"
+			class="flex-child overflow-scroll hide-scrollbar !bg-transparent"
 		>
 			<h3 class="h3 text-white p-2">Get a memorial of this visit</h3>
 			<h6 class="p-2 font-sans">Scan this QR to get your POAP</h6>
@@ -220,8 +237,8 @@
 	</div>
 </div>
 
-<style>
-	.namaaste-cursor:hover {
+<style lang="postcss">
+	.namaste-cursor:hover {
 		cursor: url('cursor-namaste.png'), auto;
 	}
 
@@ -236,4 +253,8 @@
 		box-shadow: inset 0 0 5px #ffffff;
 		transition: box-shadow 0.3s ease-in-out;
 	}
+
+  .flex-child {
+      @apply mx-2 h-[40vh] md:w-[50vw] min-[798px]:max-w-[48vw] card rounded-md flex flex-col variant-outline;
+  }
 </style>
