@@ -32,7 +32,7 @@
 				<strong class="text-xl uppercase"><a href="/">chethack</a></strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a class="btn btn-sm variant-ghost-surface" href="/blog" rel="noreferrer"> Blog </a>
+				<!--<a class="btn btn-sm variant-ghost-surface" href="/blog" rel="noreferrer"> Blog </a>-->
 				<a class="btn btn-sm variant-ghost-surface" href="/portfolio" rel="noreferrer">
 					Portfolio
 				</a>
