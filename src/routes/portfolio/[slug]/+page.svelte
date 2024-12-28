@@ -81,13 +81,48 @@
 					<div class="pl-4">
 						<p class="h6">{key}</p>
 						<ul class="list-disc pl-6 flex flex-wrap">
-							{#each value as line}
-								{#if line.length > 20 && key != 'Team'}
-									<li class="w-full">{@html line}</li>
-								{:else}
-									<li class="2xl:w-1/2 mx-4 lg:mx-2 2xl:mx-0 md:pr-4 sm:w-full">{@html line}</li>
-								{/if}
-							{/each}
+							{#if key === 'Team'}
+								{#each value as member}
+									{#if member.name && member.name.length > 20}
+										<li class="w-full">
+											{#if member.linkedin}
+												<a
+													href={member.linkedin}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="underline hover:text-blue-600"
+												>
+													{@html member.name}
+												</a>
+											{:else}
+												{@html member.name}
+											{/if}
+										</li>
+									{:else}
+										<li class="2xl:w-1/2 mx-4 lg:mx-2 2xl:mx-0 md:pr-4 sm:w-full">
+											{#if member.linkedin}
+												<a
+													href={member.linkedin}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													{@html member.name}
+												</a>
+											{:else}
+												{@html member.name}
+											{/if}
+										</li>
+									{/if}
+								{/each}
+							{:else}
+								{#each value as line}
+									{#if line.length > 20}
+										<li class="w-full">{@html line}</li>
+									{:else}
+										<li class="2xl:w-1/2 mx-4 lg:mx-2 2xl:mx-0 md:pr-4 sm:w-full">{@html line}</li>
+									{/if}
+								{/each}
+							{/if}
 						</ul>
 					</div>
 					{#if key !== Object.keys(data.project?.details)[Object.keys(data.project?.details).length - 1]}
@@ -96,5 +131,6 @@
 				{/each}
 			{/if}
 		</div>
+
 	</div>
 </article>
