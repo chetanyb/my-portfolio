@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { modalStore } from '../../../stores/modalStore.js';
-	import FullScreenImageModal from '$lib/modals/FullScreenImageModal.svelte';
+	import FullScreenImageModal from '$lib/components/FullScreenImageModal.svelte';
 
 	function openModal(image: string) {
 		modalStore.set({ visible: true, image });
@@ -90,7 +90,6 @@
 													href={member.linkedin}
 													target="_blank"
 													rel="noopener noreferrer"
-													class="underline hover:text-blue-600"
 												>
 													{@html member.name}
 												</a>

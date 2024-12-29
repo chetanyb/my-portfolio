@@ -1,6 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	import { modalStore } from '../../stores/modalStore';
+	import { modalStore } from '../../stores/modalStore.js';
 
 	function closeModal() {
 		modalStore.update((current) => ({ ...current, visible: false }));
