@@ -91,10 +91,10 @@
 													target="_blank"
 													rel="noopener noreferrer"
 												>
-													{@html member.name}
+													{member.name}
 												</a>
 											{:else}
-												{@html member.name}
+												{member.name}
 											{/if}
 										</li>
 									{:else}
@@ -105,10 +105,10 @@
 													target="_blank"
 													rel="noopener noreferrer"
 												>
-													{@html member.name}
+													{member.name}
 												</a>
 											{:else}
-												{@html member.name}
+												{member.name}
 											{/if}
 										</li>
 									{/if}
@@ -116,9 +116,9 @@
 							{:else}
 								{#each value as line}
 									{#if line.length > 20}
-										<li class="w-full">{@html line}</li>
+										<li class="w-full">{line}</li>
 									{:else}
-										<li class="2xl:w-1/2 mx-4 lg:mx-2 2xl:mx-0 md:pr-4 sm:w-full">{@html line}</li>
+										<li class="2xl:w-1/2 mx-4 lg:mx-2 2xl:mx-0 md:pr-4 sm:w-full">{line}</li>
 									{/if}
 								{/each}
 							{/if}
