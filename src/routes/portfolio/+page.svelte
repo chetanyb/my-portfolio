@@ -16,7 +16,8 @@
 	let tags: Record<string, boolean> = {
 		Cloud: true,
 		IoT: true,
-		Blockchain: true
+		Blockchain: true,
+		Design: true,
 	};
 
 	let filteredProjects: object[] = [];
