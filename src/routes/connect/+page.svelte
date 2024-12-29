@@ -200,7 +200,7 @@
 					<div class="my-1 mx-2">
 						<button
 							class="flex justify-center border rounded-full w-full inner-glow px-4"
-							on:click={() => window.open('https://www.linkedin.com/in/chetanybhardwaj/, _blank')}
+							on:click={() => window.open('https://www.linkedin.com/in/chetanybhardwaj/', '_blank')}
 						>
 							<span class="hidden sm:block md:hidden min-[784px]:block" style="margin-right: 4px;"
 								>View profile and</span
