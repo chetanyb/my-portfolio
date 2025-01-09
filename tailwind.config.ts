@@ -19,6 +19,9 @@ export default {
 			fontFamily: {
 				kalam: ['Kalam', 'Noto Sans Devanagari', 'sans-serif'],
 				love_notes: ['Love Notes', 'sans-serif']
+			},
+			screens: {
+				'lg-plus': '1199px',
 			}
 		}
 	},

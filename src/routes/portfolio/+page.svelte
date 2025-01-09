@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	function navigateToProject(projectName: string) {
 		goto(`/portfolio/${projectName}`);
@@ -21,17 +22,20 @@
 	};
 
 	let filteredProjects: object[] = [];
+	let projectChunks: object[] = [];
+	let chunkSize = 3;
+
+	function updateChunkSize() {
+		const width = window.innerWidth;
+		chunkSize = width < 1024 ? 2 : 3;
+		projectChunks = chunkProjects(filteredProjects, chunkSize);
+	}
 
 	$: {
 		filteredProjects = data.projects.filter((project) => {
 			return Object.keys(tags).some((tag) => tags[tag] && project.tags.includes(tag.toLowerCase()));
 		});
-	}
-
-	let projectChunks: object[] = [];
-
-	$: {
-		projectChunks = chunkProjects(filteredProjects, 4);
+		projectChunks = chunkProjects(filteredProjects, chunkSize);
 	}
 
 	function toggle(tag: string): void {
@@ -46,18 +50,28 @@
 			} else {
 				chunk.push(e);
 			}
-
 			return acc;
 		}, []);
 	}
+
+	onMount(() => {
+		updateChunkSize();
+		window.addEventListener('resize', updateChunkSize);
+
+		return () => {
+			window.removeEventListener('resize', updateChunkSize);
+		};
+	});
 </script>
 
+
 <div>
-	<div class="flex-col sm:flex justify-center item-center my-10">
+	<div class="flex-col sm:flex justify-center item-center mt-10 mb-4">
+		<div class="w-full"></div>
 		<div class="w-full flex justify-center">
-			<h2 class="h2 gradient-animation">Portfolio</h2>
+			<h2 class="h1 gradient-animation">Portfolio</h2>
 		</div>
-		<div class="flex items-center justify-center pt-2 lg:pt-0 lg:absolute lg:right-5 mx-10">
+		<div class="flex items-center justify-center pt-2 mx-10">
 			{#each Object.keys(tags) as tag}
 				<button
 					class="chip mx-2 text-sm transition-colors duration-500 ease-in-out {tags[tag]
@@ -84,7 +98,7 @@
 						class="absolute top-0 left-0 right-0 h-16 flex items-baseline justify-between rounded-sm bg-gradient-to-br from-yellow-500 to-yellow-700"
 					>
 						<img src={project.logo} alt={project.slug + ' logo'} class="h-28 p-4" />
-						<h2 class="h1 md:h2 -bottom-4 right-4 absolute">
+						<h2 class="h1 md:h3 lg-plus:h2 -bottom-4 right-4 absolute">
 							{project.slug.toUpperCase()}
 						</h2>
 					</div>

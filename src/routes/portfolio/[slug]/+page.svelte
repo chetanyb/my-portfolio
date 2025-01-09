@@ -6,6 +6,12 @@
 		modalStore.set({ visible: true, image });
 	}
 
+	function getYouTubeVideoID(url) {
+		const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
+		const match = url.match(regex);
+		return match ? match[1] : null;
+	}
+
 	export let data;
 </script>
 
@@ -40,15 +46,29 @@
 
 	<div class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto px-4 pb-4">
 		{#if data.project?.video}
-			<div
-				class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 lg:w-96 text-center flex justify-center items-center overflow-hidden"
-			>
-				<!-- svelte-ignore a11y-media-has-caption -->
-				<video controls class="object-contain w-full h-full px-2">
-					<source src={data.project.video} type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
-			</div>
+			{#if data.project.video.includes('youtube.com') || data.project.video.includes('youtu.be')}
+				<div
+					class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 lg:w-96 text-center flex justify-center items-center overflow-hidden"
+				>
+					<iframe
+						class="object-contain w-full h-full px-2"
+						src={`https://www.youtube.com/embed/${getYouTubeVideoID(data.project.video)}`}
+						title="YouTube video"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+			{:else}
+				<div
+					class="snap-start shrink-0 card py-2 w-40 h-32 md:w-80 md:h-60 lg:w-96 text-center flex justify-center items-center overflow-hidden"
+				>
+					<!-- svelte-ignore a11y-media-has-caption -->
+					<video controls class="object-contain w-full h-full px-2">
+						<source src={data.project.video} type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+				</div>
+			{/if}
 		{/if}
 		{#each data.project?.images ?? [] as image}
 			<button
