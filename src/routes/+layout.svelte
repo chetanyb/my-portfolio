@@ -26,6 +26,11 @@
 
 </script>
 
+<svelte:head>
+	<title>chethack</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</svelte:head>
+
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
