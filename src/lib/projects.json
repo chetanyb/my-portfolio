@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "sita",
+    "logo": "/projects/sita.png",
+    "title": "SITA",
+    "description": "Revolutionizing farming with our inclusive lending platform! \uD83C\uDF3E Tailored credit lines for farmers using real-time soil insights from IoT & satellite tech. Empowering growth, one harvest at a time. \uD83D\uDEF0\uFE0F\uD83C\uDF31 #FutureOfFarming #SmartAgri",
+    "tags": ["blockchain", "iot", "management"],
+    "elaboration": "Inspired by the Indian goddess Sita, known for her association with fertility and prosperity, our platform, SITA, brings a fresh start to agricultural financing. Just as Sita linked different worlds, our platform connects the old with the new.\n\nBuilding A Future on Hope and Prosperity: SITA combines traditional principles with cutting-edge technology to create a global network. This system allows farmers to get the funding they need based on the future productivity of their land, not their past.\n\nFrom Ground to Space: Moving beyond traditional credit assessments, we've established a unique credit line based on real-time data from the farmers' fields. IoT devices and satellite data provide us with information to predict a farmer's potential income for the next season.\n\nA Clear Vision of Trust: For lenders, SITA provides clear and detailed information. Tools and insights about a farmer's ability to repay loans and the historical productivity of their land, enable lenders to make informed decisions. They're not just providing funds; they're helping to build futures.\n\nDrawing from the story of Sita and the benefits of modern technology, we combine tradition and innovation on a worldwide scale.\n\nSITA, inspired by fertile soil. SITA, linking lenders' confidence and farmers' dreams. SITA, thriving on the mix of real-time data and lasting principles. #SITAFarmingRevolution.\n\nUtilizing IoT, satellite data, and a broad perspective, we've planted our roots in the richest digital soil.",
+    "how": "Our project leverages advanced tools to benefit farmers. Using the ESP32 hardware, we extract real-time soil data, capturing metrics such as Nitrogen, Phosphorus, Potassium levels, as well as temperature and humidity.\n\nTo amplify our data collection, we integrate Chainlink, which fetches this soil data and complements it with information from satellites. By merging these data streams using Chainlink Functions, we can accurately assess the potential creditworthiness of a farmer using Distributed Oracles and bring the data on-chain.\n\nFor user convenience, we've integrated Biconomy Social login and Walletconnect. The added benefit of Biconomy's Paymaster feature ensures users aren't burdened with transaction costs, streamlining their experience on the platform.\n\nWe employ WorldCoin to ensure each farmer on our platform is a distinct user, and it also facilitates a transparent voting system, letting community opinions be heard.\n\nCentral to our platform's functionality is the ERC 6551 standard. This allows us to facilitate liquidity flow, distribute debt signifying tokens, and store crucial loan terms, among other benefits.\n\nCentral to our commitment to decentralization, we've chosen nft.storage to house our vital data. This platform offers robust, decentralized storage, ensuring that loan details and other vital records remain secure and easily accessible.\n\nFor reliability and security, all operations are facilitated through the Polygon Mumbai testnet.",
+    "details": {
+      "Technologies Used": ["EVM", "Polygon PoS", "ESP32", "C++", "Chainlink Functions", "Biconomy", "WorldCoin", "nft.storage"],
+      "Awards": [
+        "\uD83E\uDDDE Worldcoin — Most Creative",
+        "\uD83E\uDD1D Polygon — \uD83E\uDD47 Best Public Good with Account Abstraction"
+      ],
+      "Team": [
+        { "name": "Chetany Bhardwaj", "linkedin": "https://www.linkedin.com/in/chetanybhardwaj/" },
+        { "name": "Liam Faruq", "linkedin": "https://www.linkedin.com/in/liam-faruq-5b808462/" },
+        { "name": "Natalie Sangkagalo", "linkedin": "https://www.linkedin.com/in/natalie-sangkagalo/" },
+        { "name": "Hosuk Chung", "linkedin": "https://www.linkedin.com/in/hosuk-chung/" },
+        { "name": "Sergey Gerodes", "linkedin": "https://www.linkedin.com/in/sgerodes/" }
+      ]
+    },
+    "links": {
+      "GitHub": {
+        "url": "https://github.com/EGP-2023/SITA",
+        "logo": "/github.svg",
+        "name": "GitHub"
+      },
+      "Showcase": {
+        "url": "https://ethglobal.com/showcase/sita-tsmvv",
+        "logo": "/ethglobal.svg",
+        "name": "EthGlobal"
+      }
+    },
+    "video": "https://stream.mux.com/F57OpD2srs202YmBo4dtIPyqv5Md023jA3O92h00i8idfY/high.mp4",
+    "images": [
+      "https://ethglobal.b-cdn.net/projects/tsmvv/screenshots/0t25y/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/tsmvv/screenshots/ze5cd/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/tsmvv/screenshots/qda83/default.jpg"
+    ]
+  },
+  {
+    "slug": "green$creen",
+    "logo": "/projects/greenscreen.png",
+    "title": "green$creen",
+    "description": "Green$creen integrates IoT and blockchain technologies to redefine vehicle emissions management by minting RED tokens, representing 'environmental debt'. It drives accountability and incentivizes emission reductions, paving the way for a sustainable future.",
+    "tags": ["blockchain", "iot", "management"],
+    "elaboration": "Green$creen is a transformative solution aimed at addressing the critical challenge of vehicle emissions in a data-driven and accountable way. The platform bridges advanced IoT sensors and blockchain technology to collect, analyze, and transparently log emission data. By doing so, Green$creen reimagines how environmental responsibility can be managed and incentivized.\n\nIntroducing Environmental Debt: At the heart of Green$creen is the concept of RED tokens. These tokens act as a digital representation of carbon emissions, quantifying environmental debt in a measurable way. Minted directly onto the blockchain, RED tokens create a transparent and immutable record of emissions for every tracked vehicle, ensuring accountability and enabling stakeholders to take informed steps towards emission reductions.\n\nSynergy Between Technology and Responsibility: Green$creen aligns closely with existing carbon offset initiatives like GREEN tokens in marketplaces such as Toucan and FlowCarbon. By presenting RED tokens as an innovative counterpart to GREEN tokens, the platform fosters a dual-system approach where emissions are not only highlighted but also offset through existing green efforts. This synergy balances the global push for emission transparency and climate action.\n\nBuilding for Compliance and Scalability: Green$creen’s design is forward-looking, integrating seamlessly with evolving regulatory standards like India's BS6.2 norms, which mandate advanced emission sensors for vehicles. This compliance-ready approach ensures that Green$creen is not just a proof of concept but a scalable and adoptable solution for governments, corporations, and individual users worldwide.\n\nGreen$creen stands as a beacon of environmental innovation, blending cutting-edge technology with actionable solutions to redefine how we measure, manage, and mitigate the environmental costs of modern transportation.",
+    "how": "Green$creen leverages cutting-edge hardware and software to bring its vision to life. The MQ135 sensor, paired with a temperature and moisture module (SHT10), collects real-time vehicle emission data with high accuracy. This data is processed by an ESP32 microcontroller, which acts as the operational hub for on-device computations.\n\nTo integrate this real-world data into the digital ecosystem, Chainlink Functions fetch and validate the information before securely uploading it onto the Ethereum blockchain. Chainlink CCIP ensures interoperability with other networks like Arbitrum, expanding the reach of Green$creen across blockchain ecosystems. Notifications about token activities are powered by Push Protocol and Metamask Snaps, fostering transparency and user engagement.\n\nFor end users, Green$creen prioritizes accessibility. A single-click hardware setup makes it easy for individuals and organizations to adopt the technology, while WalletConnect enables seamless interactions with the blockchain. The platform is built with robust technologies, including C++, Solidity, Next.js, and DaisyUI, to ensure a reliable and user-friendly experience.",
+    "details": {
+      "Technologies Used": ["EVM", "Ethereum", "Arbitrum", "ESP32", "C++", "Chainlink CCIP", "Chainlink Functions", "Push Protocol"],
+      "Awards": [
+        "MetaMask - Best Dapp for Snaps 1st place",
+        "Chainlink Constellation - Top Quality Project",
+        "WalletConnect - Innovation Pool Prize",
+        "Arbitrum - Pool Prize"
+      ],
+      "Team": [
+        { "name": "Chetany Bhardwaj", "linkedin": "https://www.linkedin.com/in/chetanybhardwaj/" },
+        { "name": "Pawan Bajaj", "linkedin": "https://www.linkedin.com/in/pavvan/" }
+      ]
+    },
+    "links": {
+      "GitHub": {
+        "url": "https://github.com/EGI-2023/greenscreen",
+        "logo": "/github.svg",
+        "name": "GitHub"
+      },
+      "Showcase": {
+        "url": "https://ethglobal.com/showcase/green-creen-g5whu",
+        "logo": "/ethglobal.svg",
+        "name": "EthGlobal"
+      }
+    },
+    "video": "https://stream.mux.com/chKU2oxzbvd006XJt400GeIqAVCE1YSaKGluj6SiKNqBY/high.mp4",
+    "images": [
+      "https://ethglobal.b-cdn.net/projects/g5whu/screenshots/1ueso/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/g5whu/screenshots/0zkmw/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/g5whu/screenshots/k75mo/default.jpg"
+    ]
+  },
+  {
+    "slug": "Text to ASL",
+    "title": "Text to Sign Language",
+    "logo": "/projects/t2s.png",
+    "description": "This project aims to bridge communication gaps by converting natural language input into sign language. It intelligently identifies key terms in user input and translates them into sign language, making communication more inclusive for the deaf and hard-of-hearing community.",
+    "tags": ["cloud", "design"],
+    "elaboration": "This project focuses on converting text into sign language to make communication accessible to those who use American Sign Language (ASL). It processes user input to identify key terms and translates them into visual sign language gestures, offering a practical tool for breaking down communication barriers. The platform is designed to be simple, efficient, and helpful for both everyday interactions and learning purposes.",
+    "how": "This project is a system designed to translate natural language into sign language. It uses JavaScript libraries to analyze user input, extract important terms, and convert them into corresponding sign language representations. The application consists of a frontend and a backend. The frontend provides a simple interface for user interaction, while the backend handles data processing and communication with a database. The system relies on the WLASL dataset, which contains word-level sign language data. A script named `generateCSV.sh` is used to preprocess the dataset by converting it into a CSV file. This CSV is then imported into a PostgreSQL database, where the data is stored and accessed for translations. Redis is used to improve performance by caching frequently accessed data.\n\nTo set up the project, the repository is cloned, and dependencies for the frontend and backend are installed. The WLASL dataset is downloaded from Kaggle, extracted, and processed with the `generateCSV.sh` script to create the CSV file. The CSV is then imported into PostgreSQL, and database connection details are configured in the `.env` file and `sequelize.js`. After setup, the frontend is started using the command `npm run dev`, which runs a local development server. The backend is started separately with `npm run backend`. Both services work together to process user input and provide sign language translations.\nThis project focuses on accurate term extraction and translation, using a structured dataset and reliable backend processes to ensure functionality. It supports extensions and modifications, allowing others to improve or expand its capabilities. The project is open-source and follows the MIT License, encouraging contributions and collaboration.",
+    "details": {
+      "Technologies Used": ["ReactJs", "ExpressJs", "Redis", "PostgreSQL", "Microsoft Azure"],
+      "Features": [
+        "\uD83D\uDD0D Key Term Identification",
+        "\uD83D\uDC50 Sign Language Conversion",
+        "\uD83D\uDCBB Interactive Interface",
+        "\uD83D\uDD27 Robust Backend"
+      ]
+    },
+    "links": {
+      "GitHub": {
+        "url": "https://github.com/chetanyb/Natural-Language-to-Sign-Language-Azure",
+        "logo": "/github.svg",
+        "name": "GitHub"
+      }
+    },
+    "video": "https://youtu.be/YXKqpz4I03s?si=yERbX373BjVTYeBE",
+    "images": []
+  },
+  {
+    "slug": "loGHO",
+    "logo": "/projects/logho.png",
+    "title": "loGHO",
+    "description": "Revolutionizing crypto access with no on-ramp fees, free GHO minting, and 1:1 USD-based stablecoin mint value. Enjoy easy GHO onboarding, liquidity benefits, and governance incentives.",
+    "tags": ["blockchain", "design"],
+    "elaboration": "loGHO simplifies access to GHO, the decentralized stablecoin native to the Aave Protocol, by removing barriers for users without prior crypto experience. It allows seamless onboarding with no on-ramp fees or GHO minting costs, ensuring cost-efficient transactions and full value for users. As a stablecoin-backed GHO facilitator, loGHO provides sufficient collateral to safeguard liquidity and prevent shortages, promoting trust and adoption. The platform ensures a 1:1 mint value for USD-based stablecoins, maintaining GHO’s peg stability and enabling arbitrage opportunities for users. A nominal 0.5% exit load fee is charged when redeeming GHO for other stablecoins, with revenues distributed to governance treasuries and platform vaults to maintain liquidity. By introducing an alternative avenue for obtaining GHO, loGHO strengthens the ecosystem and supports the stable growth of Aave’s decentralized finance infrastructure.",
+    "how": "The loGHO project is designed to provide a streamlined user experience through a single dashboard interface where users can access all necessary information and perform interactions. This centralized design enhances usability by eliminating the need to navigate multiple pages. The project integrates Monerium for fiat-to-crypto conversion, simplifying onboarding for users without existing crypto assets. ConnectKit is used as the wallet interface, ensuring secure and simple management of assets and transactions. Modifications to the GHO-core contracts enable seamless integration with Monerium and align the platform with user needs. Users begin by signing up, connecting their wallets, and minting GHO against their preferred stablecoins. Deposits are managed through an ERC-4626 interest-bearing vault, providing transparency and efficiency. Upon deposit, users receive vTokens to track their assets, which are redeemed during withdrawals by burning vTokens and the equivalent GHO amount. The project emphasizes comprehensive integration of technologies and a user-centric approach, with its single dashboard design reflecting its commitment to accessibility and simplicity.",
+    "details": {
+      "Technologies Used": ["Ethereum", "ethers.js", "ReactJs", "ReactHooks", "React Router"],
+      "Awards": [
+        "Family - Pool Prize"
+      ],
+      "Team": [
+        { "name": "Chetany Bhardwaj", "linkedin": "https://www.linkedin.com/in/chetanybhardwaj/" },
+        { "name": "Liam Faruq", "linkedin": "https://www.linkedin.com/in/liam-faruq-5b808462/" }
+      ]
+    },
+    "links": {
+      "GitHub": {
+        "url": "https://github.com/chetanyb/loGHO/",
+        "logo": "/github.svg",
+        "name": "GitHub"
+      },
+        "Showcase": {
+            "url": "https://ethglobal.com/showcase/logho-5gj5v",
+            "logo": "/ethglobal.svg",
+            "name": "EthGlobal"
+        }
+    },
+    "video": "https://stream.mux.com/93zZv6pnViWgg01Rb8gMIUE7yOQtPZOX6iJ4sFKp9LOM/high.mp4",
+    "images": [
+      "https://ethglobal.b-cdn.net/projects/98z83/screenshots/xqze6/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/98z83/screenshots/xaukn/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/98z83/screenshots/4k6zf/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/98z83/screenshots/8g7tw/default.jpg",
+      "https://ethglobal.b-cdn.net/projects/98z83/screenshots/02cv4/default.jpg"
+    ]
+  },
+  {
+    "slug": "SITA-G4G",
+    "logo": "/projects/sita-g4g.png",
+    "title": "SITA-G4G",
+    "description": "SITA is a comprehensive agricultural platform providing real-time sensor data, AI-driven crop recommendations, and a trading marketplace, powered by tools like Google Cloud ML, ChatGPT, and weather APIs.",
+    "tags": [
+      "cloud",
+      "iot"
+    ],
+    "elaboration": "SITA is an agricultural platform designed to simplify farming and make it more efficient. It helps farmers, industry players, and regulators by providing real-time sensor data from the fields, offering AI-based crop recommendations, and enabling users to buy and sell through a connected marketplace. The platform also provides weather and satellite information, making it easier to plan and manage farming activities. \n\nFarmers can get insights about their soil and crop health, receive suggestions for better farming practices, and access resources to improve their yields. Users can sign up, verify their accounts, and access a dashboard where they can view sensor data, explore crop advice, and navigate the marketplace for trading. SITA combines various tools and data sources to provide a complete solution for farming needs, making agriculture smarter and more informed.",
+    "how": "The SITA platform integrates various components to deliver its functionality. It combines hardware and software, starting with an Arduino UNO connected to a Raspberry Pi. The Arduino collects data from sensors, including a water pH sensor, DS18B20 temperature sensor, capacitive moisture sensor, and NPK sensor, which measure environmental and soil conditions. This data is sent to the Raspberry Pi through Serial communication and stored in InfluxDB, a time-series database, for real-time analysis. The software stack includes a frontend and backend supported by tools like Google Cloud Compute, AutoML, and Vertex AI for machine learning-based crop recommendations. CockroachDB is used alongside InfluxDB for database management, and APIs like OpenAI, OpenWeatherAPI, and Agromonitor provide additional data for weather and satellite insights. The backend, built with Node.js and Express, interacts with the database and APIs, while the frontend, developed using HTML, CSS, and JavaScript, displays real-time data and AI-generated recommendations on a user-friendly dashboard. The system also incorporates secure user authentication with JSON Web Tokens and bcrypt, along with communication tools like Twilio, Speakeasy, and Nodemailer for notifications. Together, these components provide a seamless and data-driven agricultural solution.",
+    "details": {
+      "Technologies Used": [
+        "GCP",
+        "Google Cloud Compute",
+        "Google Vertex AI",
+        "OpenAI API",
+        "OpenWeatherMaps",
+        "JWT",
+        "nodemailer",
+        "twilio",
+        "ORM - Sequilize",
+        "CockroachDB",
+        "InfluxDB",
+        "Arduino"
+      ],
+      "Team": [
+        {
+          "name": "Chetany Bhardwaj",
+          "linkedin": "https://www.linkedin.com/in/chetanybhardwaj/"
+        },
+        {
+          "name": "Chitra Sharma",
+          "linkedin": "https://www.linkedin.com/in/chitra-sharma-nm/"
+        }
+      ]
+    },
+    "links": {
+      "GitHub": {
+        "url": "https://github.com/gfg-sita/SolvingForIndia",
+        "logo": "/github.svg",
+        "name": "GitHub"
+      }
+    },
+    "video": "https://youtu.be/7_dL71Xgy2s",
+    "images": [
+      "/projects/g4g/1.png",
+      "/projects/g4g/2.png",
+      "/projects/g4g/3.png",
+      "/projects/g4g/4.png",
+      "/projects/g4g/5.png",
+      "/projects/g4g/6.png"
+
+    ]
+  },
+  {
+    "slug": "Veergatha VR",
+    "logo": "/projects/veergatha.png",
+    "title": "Veergatha VR Museum",
+    "description": "The Veergatha Museum is a VR tribute to Indian soldiers, featuring narrated stories, Army heritage, and an interactive shooting range with immersive patriotic sound design.",
+    "tags": [
+      "design"
+    ],
+    "elaboration": "The Veergatha Museum is a virtual reality museum built to honor the bravery and sacrifices of Indian soldiers. It features a Paramveer Chakra awardee gallery where the inspiring stories of these heroes are narrated. The museum also showcases Indian Army heritage and includes an interactive shooting range with replicas of guns used by the Indian Army. Promoting unity and patriotism, the museum features original sound design, with compositions inspired by army marches and tunes. The narration, recording, and mixing were personally handled using Adobe Audition, while FL Studio was used for the sound design, creating an immersive and heartfelt tribute.",
+    "how": "",
+    "details": {
+      "Technologies Used": [
+        "Unity",
+        "FL Studio",
+        "Adobe Audition"
+      ],
+      "Team": [
+        {
+          "name": "Chetany Bhardwaj",
+          "linkedin": "https://www.linkedin.com/in/chetanybhardwaj/"
+        },
+        {
+          "name": "Honey Jain",
+          "linkedin": "https://www.linkedin.com/in/honey-jain-9b6b611ba/"
+        },
+        {
+          "name": "Hardik Basera",
+          "linkedin": "https://www.linkedin.com/in/hardik-basera-2002/"
+        },
+        {
+          "name": "Aryan Dube",
+          "linkedin": "https://www.linkedin.com/in/aryan-dube-aa11a3220/"
+        }
+      ]
+    },
+    "video": "https://youtu.be/bRdQ0sW71AU?si=DA2g6nK5XfaQDVFO",
+    "images": []
+  }
+]
