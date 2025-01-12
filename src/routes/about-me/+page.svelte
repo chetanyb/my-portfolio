@@ -11,23 +11,23 @@
 	<div class="m-2 px-4 py-2 pt-0">
 		<div class="flex-col">
 			<p class="text-justify">
-			Hi, I’m <strong>Chetany Bhardwaj</strong>, aka <strong>chethack</strong>—a passionate software engineer and creative thinker dedicated to building solutions that drive innovation and inclusivity. My journey in computer science is fueled by curiosity, a love for solving complex problems, and a desire to make a meaningful impact through technology. ✨
+				Hi, I’m <strong>Chetany Bhardwaj</strong>, aka <strong>chethack</strong>—a passionate software engineer and creative thinker dedicated to building solutions that drive innovation and inclusivity. My journey in computer science is fueled by curiosity, a love for solving complex problems, and a desire to make a meaningful impact through technology. ✨
 			</p>
 			<br>
 			<p class="text-justify">
-			With hands-on experience in blockchain, cloud computing, and GRID technologies, I’ve honed my skills through impactful internships at <strong>Polygon Labs</strong> and <strong>KEK</strong>. From optimizing high-performance systems to leading award-winning hackathon projects like <strong>SITA</strong>, a blockchain-based agricultural lending platform, I’m committed to delivering scalable and ethical solutions. 🚀
+				With hands-on experience in blockchain, cloud computing, and GRID technologies, I’ve honed my skills through impactful internships at <strong>Polygon Labs</strong> and <strong>KEK</strong>. From optimizing high-performance systems to leading award-winning hackathon projects like <strong>SITA</strong>, a blockchain-based agricultural lending platform, I’m committed to delivering scalable and ethical solutions. 🚀
 			</p>
 			<br>
 			<p class="text-justify">
-			Currently, I’m a final-year <strong>Computer Science Engineering</strong> student majoring in <strong>Cloud Computation and Virtualization Technology</strong>, with dual minors in <strong>DevOps Practices</strong> and <strong>Design Principles</strong>. My academic journey, combined with certifications like <strong>AWS Solutions Architect</strong>, equips me with the expertise to tackle challenges in cloud computing, DevOps, and distributed systems. 🖥️
+				Currently, I’m a final-year <strong>Computer Science Engineering</strong> student majoring in <strong>Cloud Computation and Virtualization Technology</strong>, with dual minors in <strong>DevOps Practices</strong> and <strong>Design Principles</strong>. My academic journey, combined with certifications like <strong>AWS Solutions Architect</strong>, equips me with the expertise to tackle challenges in cloud computing, DevOps, and distributed systems. 🖥️
 			</p>
 			<br>
 			<p class="text-justify">
-			Beyond technology, I channel my creativity into <strong>music production</strong>, <strong>songwriting</strong>, and <strong>rapping</strong>—expressing ideas and emotions through rhythm and lyrics. 🎵🎤
+				Beyond technology, I channel my creativity into <strong>music production</strong>, <strong>songwriting</strong>, and <strong>rapping</strong>—expressing ideas and emotions through rhythm and lyrics. 🎵🎤
 			</p>
 			<br>
 			<p class="text-justify">
-			Let’s connect and collaborate to build a future where innovation meets social good. 🌍🤝
+				Let’s connect and collaborate to build a future where innovation meets social good. 🌍🤝
 			</p>
 		</div>
 
@@ -126,7 +126,7 @@
 						<ul class="list-disc ml-6">
 							<li>Graduated from PBA Singapore cohort at NUS.</li>
 							<li>Learnt about:
-							  <ul class="list-disc ml-6">
+								<ul class="list-disc ml-6">
 									<li>Cryptography Basics</li>
 									<li>Economics & Game Theory</li>
 									<li>Decentralized Governance</li>
@@ -148,17 +148,17 @@
 		<div class="flex-col m-2 items-center justify-center">
 			<h4 class="h4 text-center">Languages</h4>
 			<div class="flex items-center justify-center">
-			  <Icon icon="skill-icons:javascript" class="h-12 w-12 m-2" />
-			  <Icon icon="skill-icons:c" class="h-12 w-12 m-2" />
-			  <Icon icon="skill-icons:rust" class="h-12 w-12 m-2" />
-			  <Icon icon="skill-icons:golang" class="h-12 w-12 m-2" />
+				<Icon icon="skill-icons:javascript" class="h-12 w-12 m-2" />
+				<Icon icon="skill-icons:c" class="h-12 w-12 m-2" />
+				<Icon icon="skill-icons:rust" class="h-12 w-12 m-2" />
+				<Icon icon="skill-icons:golang" class="h-12 w-12 m-2" />
 			</div>
 		</div>
 		<div class="flex-col m-2 items-center justify-center">
 			<h4 class="h4 text-center">Frameworks and Libraries</h4>
 			<div class="flex items-center justify-center">
-			  <Icon icon="skill-icons:svelte" class="h-12 w-12 m-2" />
-			  <Icon icon="skill-icons:react-dark" class="h-12 w-12 m-2" />
+				<Icon icon="skill-icons:svelte" class="h-12 w-12 m-2" />
+				<Icon icon="skill-icons:react-dark" class="h-12 w-12 m-2" />
 				<Icon icon="skill-icons:expressjs-light" class="h-12 w-12 m-2" />
 			</div>
 		</div>
@@ -194,7 +194,18 @@
 	</div>
 
 	<hr class="!border-t-2 !border-yellow-400 my-1">
+</div>
 
+<div class="fixed bottom-4 right-4 z-50">
+	<a
+		href="/resume.pdf"
+		download
+		class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-yellow-700 text-white py-3 px-4 rounded-full shadow-lg hover:shadow-2xl transition ease-in-out duration-300"
+		aria-label="Download Resume"
+	>
+		<Icon icon="fa:download" class="h-5 w-5 mr-2" />
+		Resume
+	</a>
 </div>
 
 <style>
