@@ -40,7 +40,7 @@
 		<div class="m-2">
 			<Accordion>
 				<AccordionItem>
-					<svelte:fragment slot="lead"><img src="/groww.svg" class="h-12" alt="groww logo"></svelte:fragment>
+					<svelte:fragment slot="lead"><img src="/images/groww.svg" class="h-12" alt="groww logo"></svelte:fragment>
 					<svelte:fragment slot="summary">
 						<div class="flex-col">
 							<div>Groww | DevOps Intern</div>
@@ -54,7 +54,7 @@
 					</svelte:fragment>
 				</AccordionItem>
 				<AccordionItem>
-					<svelte:fragment slot="lead"><img src="/kek.png" class="w-12" alt="kek logo"> </svelte:fragment>
+					<svelte:fragment slot="lead"><img src="/images/kek.png" class="w-12" alt="kek logo"> </svelte:fragment>
 					<svelte:fragment slot="summary">
 						<div class="flex-col">
 							<div>KEK | GRID Computing R&D Intern</div>
@@ -70,7 +70,7 @@
 					</svelte:fragment>
 				</AccordionItem>
 				<AccordionItem>
-					<svelte:fragment slot="lead"><img src="/polygon.svg" class="h-12" alt="polygon-labs logo"></svelte:fragment>
+					<svelte:fragment slot="lead"><img src="/images/polygon.svg" class="h-12" alt="polygon-labs logo"></svelte:fragment>
 					<svelte:fragment slot="summary">
 						<div class="flex-col">
 							<div>Polygon Labs | Protocol Software Engineering Intern</div>
@@ -97,7 +97,7 @@
 		<div class="m-2">
 			<Accordion>
 				<AccordionItem>
-					<svelte:fragment slot="lead"><img src="/UPES.png" class="h-12" alt="UPES logo"></svelte:fragment>
+					<svelte:fragment slot="lead"><img src="/images/UPES.png" class="h-12" alt="UPES logo"></svelte:fragment>
 					<svelte:fragment slot="summary">
 						<div class="flex-col">
 							<div>UPES | B.Tech in Computer Science and Engineering</div>
@@ -115,7 +115,7 @@
 					</svelte:fragment>
 				</AccordionItem>
 				<AccordionItem>
-					<svelte:fragment slot="lead"><img src="/pba.png" class="h-12" alt="pba logo"></svelte:fragment>
+					<svelte:fragment slot="lead"><img src="/images/pba.png" class="h-12" alt="pba logo"></svelte:fragment>
 					<svelte:fragment slot="summary">
 						<div class="flex-col">
 							<div>Polkadot Blockchain Academy | Graduate</div>

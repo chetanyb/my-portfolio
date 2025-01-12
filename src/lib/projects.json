@@ -24,12 +24,12 @@
     "links": {
       "GitHub": {
         "url": "https://github.com/EGP-2023/SITA",
-        "logo": "/github.svg",
+        "logo": "/images/github.svg",
         "name": "GitHub"
       },
       "Showcase": {
         "url": "https://ethglobal.com/showcase/sita-tsmvv",
-        "logo": "/ethglobal.svg",
+        "logo": "/images/ethglobal.svg",
         "name": "EthGlobal"
       }
     },
@@ -64,12 +64,12 @@
     "links": {
       "GitHub": {
         "url": "https://github.com/EGI-2023/greenscreen",
-        "logo": "/github.svg",
+        "logo": "/images/github.svg",
         "name": "GitHub"
       },
       "Showcase": {
         "url": "https://ethglobal.com/showcase/green-creen-g5whu",
-        "logo": "/ethglobal.svg",
+        "logo": "/images/ethglobal.svg",
         "name": "EthGlobal"
       }
     },
@@ -100,7 +100,7 @@
     "links": {
       "GitHub": {
         "url": "https://github.com/chetanyb/Natural-Language-to-Sign-Language-Azure",
-        "logo": "/github.svg",
+        "logo": "/images/github.svg",
         "name": "GitHub"
       }
     },
@@ -128,12 +128,12 @@
     "links": {
       "GitHub": {
         "url": "https://github.com/chetanyb/loGHO/",
-        "logo": "/github.svg",
+        "logo": "/images/github.svg",
         "name": "GitHub"
       },
         "Showcase": {
             "url": "https://ethglobal.com/showcase/logho-5gj5v",
-            "logo": "/ethglobal.svg",
+            "logo": "/images/ethglobal.svg",
             "name": "EthGlobal"
         }
     },
@@ -186,7 +186,7 @@
     "links": {
       "GitHub": {
         "url": "https://github.com/gfg-sita/SolvingForIndia",
-        "logo": "/github.svg",
+        "logo": "/images/github.svg",
         "name": "GitHub"
       }
     },

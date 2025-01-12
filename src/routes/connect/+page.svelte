@@ -100,7 +100,7 @@
 			>
 				<div class="h-14 flex flex-row items-center relative">
 					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
-					<img src="lens.svg" alt="lens" class="h-12" />
+					<img src="/images/lens.svg" alt="lens" class="h-12" />
 					<p
 						class="hidden min-[910px]:block lg:flex absolute right-2 rounded-full border py-1 px-4 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
 					>
@@ -165,12 +165,12 @@
 			<!-- LinkedIn card -->
 			<div class="flex flex-col border rounded-lg border-slate-500 border-opacity-25 m-2">
 				<div class="flex items-center bg-white bg-opacity-10 rounded-t-lg">
-					<img src="linkedin.png" alt="linkedin" class="h-10 p-2" />
+					<img src="/images/linkedin.png" alt="linkedin" class="h-10 p-2" />
 				</div>
 				<div class="flex flex-col bg-black rounded-b-lg bg-opacity-15">
 					<div class="flex flex-row md:items-center">
 						<img
-							src="/linkedin.jpg"
+							src="/images/linkedin.jpg"
 							alt="linkedin profile"
 							class="h-9 w-9 md:h-16 md:w-16 rounded-full mx-4 my-2"
 						/>
@@ -187,7 +187,7 @@
 									on:click={() =>
 										window.open('https://www.linkedin.com/school/upesdehradun/', '_blank')}
 								>
-									<img src="UPES.png" alt="upes" class="h-5" />
+									<img src="/images/UPES.png" alt="upes" class="h-5" />
 									<p class="px-1 hover:underline">UPES</p>
 								</button>
 							</div>
@@ -219,7 +219,7 @@
 			>
 				<div class="w-full flex flow-row items-center bg-orange-700 bg-opacity-5 p-2">
 					<h3 class="h3 text-white px-2">Write me an email</h3>
-					<img src="email.png" alt="email" class="invert h-6" />
+					<img src="/images/email.png" alt="email" class="invert h-6" />
 				</div>
 				<div class="h-full flex-col flex items-center justify-evenly">
 					<p class="hidden sm:block">Questions, job opportunities, or just to say hi!</p>
@@ -241,7 +241,7 @@
 					<h3 class="h3 text-white p-2">Get a POAP</h3>
 					<div class="flex items-center justify-center overflow-hidden">
 						<img
-							src="/poap.jpeg"
+							src="/images/poap.jpeg"
 							alt="POAP"
 							class="m-2 w-full h-auto max-w-full max-h-full object-contain"
 						/>
@@ -343,7 +343,7 @@
 
 <style lang="postcss">
     .namaste-cursor:hover {
-        cursor: url('cursor-namaste.png'), auto;
+        cursor: url('/images/cursor-namaste.png'), auto;
     }
 
     .unselectable {

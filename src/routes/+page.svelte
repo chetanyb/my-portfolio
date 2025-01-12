@@ -7,7 +7,7 @@
 	};
 
 	let state: ImageState = {
-		currentImage: '/profile-pic.jpg',
+		currentImage: '/images/profile-pic.jpg',
 		isTransitioning: false
 	};
 
@@ -17,7 +17,7 @@
 		interval = setInterval(() => {
 			state.isTransitioning = true;
 			setTimeout(() => {
-				state.currentImage = state.currentImage === '/profile-pic.jpg' ? '/chethack.jpg' : '/profile-pic.jpg';
+				state.currentImage = state.currentImage === '/images/profile-pic.jpg' ? '/images/chethack.jpg' : '/images/profile-pic.jpg';
 				state.isTransitioning = false;
 			}, 500);
 		}, 5000);
