@@ -69,7 +69,7 @@
 	<div class="flex-col sm:flex justify-center item-center mt-10 mb-4">
 		<div class="w-full"></div>
 		<div class="w-full flex justify-center">
-			<h2 class="h1 gradient-animation">Portfolio</h2>
+			<h2 class="h2 gradient-animation">Portfolio</h2>
 		</div>
 		<div class="flex items-center justify-center pt-2 mx-10">
 			{#each Object.keys(tags) as tag}
