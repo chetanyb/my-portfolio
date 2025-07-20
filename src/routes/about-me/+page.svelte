@@ -61,7 +61,7 @@
 					<svelte:fragment slot="summary">
 						<div class="flex-col">
 							<div>Groww | DevOps Intern</div>
-							<div class="text-blue-300 text-sm">Jan 2025-Ongoing</div>
+							<div class="text-blue-300 text-sm">Jan 2025-Jun 2025</div>
 						</div>
 					</svelte:fragment>
 					<svelte:fragment slot="content">
