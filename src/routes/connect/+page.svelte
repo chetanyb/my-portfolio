@@ -1,364 +1,159 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	let twitterHeight: number;
-	let twitterWidgetLoaded = false;
-
 	export let data;
-	const publications = data.publications.items;
-	const filteredPublications = publications
-		.filter((pub: { metadata: { content: any } }) => pub.metadata && pub.metadata.content)
-		.slice(0, 10);
-
-	function setTwitterDimension() {
-		const vh = window.innerHeight;
-		twitterHeight = (window.innerWidth <= 768 ? 0.4 : 0.75) * vh;
-	}
-
-	function handleLensProfileClick() {
-		window.open('https://hey.xyz/u/chethack', '_blank');
-	}
-
-	function handleLensPostClick(id: string) {
-		window.open(`https://hey.xyz/posts/${id}`, '_blank');
-	}
-
-	let gitProfile: any = null;
-
-	onMount(() => {
-		setTwitterDimension();
-		window.addEventListener('resize', setTwitterDimension);
-
-		// 2) Dynamically load Twitter widgets
-		const script = document.createElement('script');
-		script.src = 'https://platform.twitter.com/widgets.js';
-		script.async = true;
-		script.onload = () => {
-			twitterWidgetLoaded = true;
-			if (window.twttr && window.twttr.widgets) {
-				window.twttr.widgets.load();
-			}
-		};
-		document.body.appendChild(script);
-
-		fetch('https://api.github.com/users/chetanyb')
-			.then((res) => {
-				if (!res.ok) throw new Error('Unable to fetch GitHub profile');
-				return res.json();
-			})
-			.then((data) => {
-				gitProfile = data;
-			})
-			.catch((error) => {
-				console.error('Error fetching GitHub profile:', error);
-			});
-
-		return () => {
-			window.removeEventListener('resize', setTwitterDimension);
-			document.body.removeChild(script);
-		};
-	});
 </script>
 
-<div>
-	<div class="flex flex-row justify-center group namaste-cursor unselectable pb-10 lg:pb-4 h-auto relative">
-		<h1
-			class="text-4xl md:text-6xl flex font-love_notes justify-center absolute top-0 left-0 right-0 mx-auto text-center group-hover:hidden"
-		>
-			Hello!<span class="hidden min-[350px]:block"> Nice to meet you!</span>
+<div class="min-h-screen flex flex-col justify-center items-center px-6">
+
+	<!-- Header -->
+	<div class="text-center mb-12">
+		<h1 class="text-5xl md:text-7xl font-bold mb-4">
+			<span class="text-gradient">Let's Connect</span>
 		</h1>
-		<h1
-			class="h1 flex flex-row font-kalam justify-center font-semibold absolute top-0 left-0 right-0 mx-auto py-2 sm:py-4 md:pb-6 lg:py-4 text-center hidden group-hover:block group-hover:flex"
+		<p class="text-gray-300 text-lg">Choose your preferred way to reach out</p>
+	</div>
+
+	<!-- Contact Options -->
+	<div class="grid gap-6 w-full max-w-2xl">
+
+		<!-- Email -->
+		<button
+			class="connect-card group"
+			on:click={() => window.open('mailto:chetany@sita.farm')}
 		>
-			नमस्ते!<span class="hidden min-[460px]:block flex-row">आपसे मिलकर अच्छा लगा!</span>
-		</h1>
+			<div class="flex items-center space-x-4">
+				<div class="icon-container">
+					<span class="text-2xl">✉️</span>
+				</div>
+				<div class="flex-1 text-left">
+					<h3 class="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+						Email
+					</h3>
+					<p class="text-gray-400 text-sm">chetany@sita.farm</p>
+				</div>
+				<div class="arrow">→</div>
+			</div>
+		</button>
+
+		<!-- Twitter -->
+		<button
+			class="connect-card group"
+			on:click={() => window.open('https://twitter.com/BRUHDWAJ', '_blank')}
+		>
+			<div class="flex items-center space-x-4">
+				<div class="icon-container">
+					<span class="text-2xl">🐦</span>
+				</div>
+				<div class="flex-1 text-left">
+					<h3 class="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+						Twitter
+					</h3>
+					<p class="text-gray-400 text-sm">@BRUHDWAJ</p>
+				</div>
+				<div class="arrow">→</div>
+			</div>
+		</button>
+
+		<!-- LinkedIn -->
+		<button
+			class="connect-card group"
+			on:click={() => window.open('https://www.linkedin.com/in/chetanybhardwaj/', '_blank')}
+		>
+			<div class="flex items-center space-x-4">
+				<div class="icon-container">
+					<span class="text-2xl">💼</span>
+				</div>
+				<div class="flex-1 text-left">
+					<h3 class="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+						LinkedIn
+					</h3>
+					<p class="text-gray-400 text-sm">Chetany Bhardwaj</p>
+				</div>
+				<div class="arrow">→</div>
+			</div>
+		</button>
+
+		<!-- GitHub -->
+		<button
+			class="connect-card group"
+			on:click={() => window.open('https://github.com/chetanyb', '_blank')}
+		>
+			<div class="flex items-center space-x-4">
+				<div class="icon-container">
+					<span class="text-2xl">💻</span>
+				</div>
+				<div class="flex-1 text-left">
+					<h3 class="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
+						GitHub
+					</h3>
+					<p class="text-gray-400 text-sm">chetanyb</p>
+				</div>
+				<div class="arrow">→</div>
+			</div>
+		</button>
+
 	</div>
 
-	<!-- Twitter + Lens Columns -->
-	<div class="flex-col mb-4 md:mb-0 md:flex-row md:flex w-full justify-center hide-scrollbar min-[350px]:mt-2 md:mt-6 lg:mt-12">
-		<!-- Twitter Column -->
-		<div class="flex-child overflow-scroll hide-scrollbar !bg-transparent">
-			{#if twitterWidgetLoaded}
-				<a
-					class="twitter-timeline"
-					data-theme="dark"
-					href="https://twitter.com/BRUHDWAJ?ref_src=twsrc%5Etfw"
-					data-dnt="true"
-					data-height={twitterHeight}
-					data-chrome="transparent noscrollbar noborders"
-				>
-					Tweets by @BRUHDWAJ
-				</a>
-			{/if}
-		</div>
-
-		<!-- Lens Column -->
-		<div class="flex-child mt-4 md:mt-0 overflow-scroll hide-scrollbar !bg-transparent">
-			<button
-				class="w-full hover:bg-green-700 hover:bg-opacity-10 transition-colors duration-500"
-				on:click={handleLensProfileClick}
-			>
-				<div class="h-14 flex flex-row items-center relative">
-					<h3 class="h3 text-white !bg-transparent p-2">World Through My Lens</h3>
-					<img src="/images/lens.svg" alt="lens" class="h-12" />
-					<p
-						class="hidden min-[910px]:block lg:flex absolute right-2 rounded-full border py-1 px-4 bg-pink-400 bg-opacity-25 hover:bg-pink-700 transition-colors duration-300"
-					>
-						Follow<span class="hidden min-[1050px]:block" style="margin-left: 4px;">on Lens</span>
-					</p>
-				</div>
-				<div class="flex items-center">
-					<img
-						class="rounded-sm h-12 w-12 md:h-16 md:w-16 mx-4 my-2"
-						src={data.profile.metadata.picture.optimized.uri}
-						alt="lens profile picture"
-					/>
-					<div class="flex-col">
-						<div class="flex items-center">
-							<h4 class="h5 pr-8">{data.profile.metadata.displayName}</h4>
-							<div class="hidden lg:block lg:flex rounded-md">
-								<p class="px-4 border rounded-l">Followers: {data.profile.stats.followers}</p>
-								<p class="px-4 border-t border-r border-b rounded-r">
-									Following: {data.profile.stats.following}
-								</p>
-							</div>
-						</div>
-						<p class="hidden md:block text-start">
-							{data.profile.metadata.bio}<br />
-						</p>
-					</div>
-				</div>
-			</button>
-			<div class="flex-grow overflow-auto hide-scrollbar text-white">
-				{#each filteredPublications as post}
-					<button
-						class="flex hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500 w-full"
-						on:click={() => handleLensPostClick(post.stats.id)}
-					>
-						<div class="flex-shrink-0">
-							<img
-								src="https://raw.seadn.io/files/5ae7fd7f4e447480699318309ec13f53.svg"
-								alt="lens post"
-								class="h-8 w-8 md:h-10 md:w-10 rounded-full mx-4 my-2"
-							/>
-						</div>
-						<div class="flex flex-grow items-center">
-							<div class="flex-grow p-2 text-start">
-								<p class="text-slate-200 text-opacity-50 text-xs">@chethack.lens</p>
-								<div class="text-base">{post.metadata.content}</div>
-							</div>
-						</div>
-					</button>
-				{/each}
-				<button class="w-full p-2" on:click={handleLensProfileClick}>
-					<p class="text-white p-2 border rounded-full hover:bg-pink-400 hover:bg-opacity-10 transition-colors duration-500">
-						Visit my profile
-					</p>
-				</button>
-			</div>
-		</div>
+	<!-- Footer -->
+	<div class="mt-12 text-center">
+		<p class="text-gray-500 text-sm">Always open to interesting conversations</p>
 	</div>
 
-	<!-- LinkedIn + Email stack -->
-	<div class="flex-col mb-4 md:flex-row md:flex w-full justify-center hide-scrollbar md:py-4">
-		<div class="flex-child hide-scrollbar !bg-transparent">
-			<!-- LinkedIn card -->
-			<div class="flex flex-col border rounded-lg border-slate-500 border-opacity-25 m-2">
-				<div class="flex items-center bg-white bg-opacity-10 rounded-t-lg">
-					<img src="/images/linkedin.png" alt="linkedin" class="h-10 p-2" />
-				</div>
-				<div class="flex flex-col bg-black rounded-b-lg bg-opacity-15">
-					<div class="flex flex-row md:items-center">
-						<img
-							src="/images/linkedin.jpg"
-							alt="linkedin profile"
-							class="h-9 w-9 md:h-16 md:w-16 rounded-full mx-4 my-2"
-						/>
-						<div class="flex flex-col w-[100vw] md:w-[40vw] truncate">
-							<div class="flex flex-row justify-between">
-								<button
-									class="text-base md:text-xl lg:text-2xl px-2 pt-4 hover:underline"
-									on:click={() => window.open('https://www.linkedin.com/in/chetanybhardwaj/', '_blank')}
-								>
-									Chetany Bhardwaj
-								</button>
-								<button
-									class="flex text-sm px-2 pt-5"
-									on:click={() =>
-										window.open('https://www.linkedin.com/school/upesdehradun/', '_blank')}
-								>
-									<img src="/images/UPES.png" alt="upes" class="h-5" />
-									<p class="px-1 hover:underline">UPES</p>
-								</button>
-							</div>
-							<div class="group unselectable text-md px-2 py-1">
-								<p class="group-hover:hidden">
-									Software engineer | Blockchain beever | Cloud native | IoT connected
-								</p>
-								<p class="hidden group-hover:block animate-bounce">LIFE ENTHUSIAST</p>
-							</div>
-						</div>
-					</div>
-					<div class="my-1 mx-2">
-						<button
-							class="flex justify-center border rounded-full w-full inner-glow px-4"
-							on:click={() => window.open('https://www.linkedin.com/in/chetanybhardwaj/', '_blank')}
-						>
-							<span class="hidden sm:block md:hidden min-[784px]:block" style="margin-right: 4px;">
-								View profile and
-							</span>
-							Connect on Linkedin
-						</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- Email card -->
-			<div
-				class="h-full m-2 mt-0 overflow-scroll  bg-black bg-opacity-15 flex flex-col items-center justify-between rounded-lg border border-slate-500 border-opacity-25 relative"
-			>
-				<div class="w-full flex flow-row items-center bg-orange-700 bg-opacity-5 p-2">
-					<h3 class="h3 text-white px-2">Write me an email</h3>
-					<img src="/images/email.png" alt="email" class="invert h-6" />
-				</div>
-				<div class="h-full flex-col flex items-center justify-evenly">
-					<p class="hidden sm:block">Questions, job opportunities, or just to say hi!</p>
-					<button
-						class="border rounded-lg m-2 p-2 hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-500"
-						on:click={() => window.open('mailto:chetany@sita.farm')}
-					>
-						chetany@sita.farm
-					</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- POAP + GITHUB CARDS ROW -->
-		<div class="flex-child hide-scrollbar mt-4 md:mt-0 !bg-transparent h-full">
-			<div class="flex flex-col md:flex-row md:space-x-2 h-full p-2">
-				<!-- POAP Card -->
-				<div class="card flex flex-col !bg-transparent border border-slate-500 border-opacity-25 p-2 rounded-lg w-full md:w-1/2 overflow-hidden">
-					<h3 class="h3 text-white p-2">Get a POAP</h3>
-					<div class="flex items-center justify-center overflow-hidden">
-						<img
-							src="/images/poap.jpeg"
-							alt="POAP"
-							class="m-2 w-full h-auto max-w-full max-h-full object-contain"
-						/>
-					</div>
-				</div>
-
-				<!-- GITHUB CARD -->
-				<div class="h-full overflow-scroll hidden md:block card bg-black bg-opacity-15 border border-slate-500 border-opacity-25 p-2 rounded-lg mt-2 md:mt-0 w-full md:w-1/2">
-					{#if gitProfile}
-						<div class="text-white text-center h-full">
-							<!-- Avatar -->
-							<img
-								src={gitProfile.avatar_url}
-								alt="GitHub Avatar"
-								class="rounded-full w-20 h-20 mx-auto mb-2 border-2 border-white"
-							/>
-							<!-- Basic Info -->
-							<h2 class="text-lg lg:text-xl font-bold">{gitProfile.name}</h2>
-							<p class="text-sm hidden md:block">@{gitProfile.login}</p>
-							<p class="mt-2 hidden md:block text-sm">{gitProfile.bio}</p>
-							<!-- Stats -->
-							<div class="flex justify-center sm:justify-around md:justify-center lg:justify-around mt-4">
-								<div>
-									<p class="text-md md:text-lg font-bold">{gitProfile.public_repos}</p>
-									<p class="text-xs uppercase text-white/70">Repos</p>
-								</div>
-								<div>
-									<p class="text-lg font-bold hidden sm:block md:hidden lg:block">{gitProfile.followers}</p>
-									<p class="text-xs uppercase hidden sm:block md:hidden lg:block text-white/70">Followers</p>
-								</div>
-								<div>
-									<p class="text-lg font-bold hidden sm:block md:hidden lg:block">{gitProfile.following}</p>
-									<p class="text-xs uppercase hidden sm:block md:hidden lg:block text-white/70">Following</p>
-								</div>
-							</div>
-							<!-- Link -->
-							<a
-								href={gitProfile.html_url}
-								target="_blank"
-								rel="noopener"
-								class="inline-block mt-4 px-4 py-2 border text-sm rounded-lg hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-300"
-							>
-								View on GitHub
-							</a>
-						</div>
-					{:else}
-						<p class="text-white">Loading GitHub Profile...</p>
-					{/if}
-				</div>
-			</div>
-
-			<!-- GITHUB CARD -->
-			<div class="h-full md:hidden card bg-black bg-opacity-15 border border-slate-500 border-opacity-25 p-2 rounded-lg mt-2 md:mt-0 w-full md:w-1/2">
-				{#if gitProfile}
-					<div class="text-white text-center h-full">
-						<!-- Avatar -->
-						<img
-							src={gitProfile.avatar_url}
-							alt="GitHub Avatar"
-							class="rounded-full w-20 h-20 mx-auto mb-2 border-2 border-white"
-						/>
-						<!-- Basic Info -->
-						<h2 class="text-lg lg:text-xl font-bold">{gitProfile.name}</h2>
-						<p class="text-sm hidden md:block">@{gitProfile.login}</p>
-						<p class="mt-2 hidden md:block text-sm">{gitProfile.bio}</p>
-						<!-- Stats -->
-						<div class="flex justify-center sm:justify-around md:justify-center lg:justify-around mt-4">
-							<div>
-								<p class="text-md md:text-lg font-bold">{gitProfile.public_repos}</p>
-								<p class="text-xs uppercase text-white/70">Repos</p>
-							</div>
-							<div>
-								<p class="text-lg font-bold hidden sm:block md:hidden lg:block">{gitProfile.followers}</p>
-								<p class="text-xs uppercase hidden sm:block md:hidden lg:block text-white/70">Followers</p>
-							</div>
-							<div>
-								<p class="text-lg font-bold hidden sm:block md:hidden lg:block">{gitProfile.following}</p>
-								<p class="text-xs uppercase hidden sm:block md:hidden lg:block text-white/70">Following</p>
-							</div>
-						</div>
-						<!-- Link -->
-						<a
-							href={gitProfile.html_url}
-							target="_blank"
-							rel="noopener"
-							class="inline-block mt-4 px-4 py-2 border text-sm rounded-lg hover:bg-orange-700 hover:bg-opacity-10 transition-colors duration-300"
-						>
-							View on GitHub
-						</a>
-					</div>
-				{:else}
-					<p class="text-white">Loading GitHub Profile...</p>
-				{/if}
-			</div>
-		</div>
-
-	</div>
 </div>
 
-<style lang="postcss">
-    .namaste-cursor:hover {
-        cursor: url('/images/cursor-namaste.png'), auto;
+<style>
+    .text-gradient {
+        background: linear-gradient(135deg, #fbbf24, #f59e0b, #eab308);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease-in-out infinite;
     }
 
-    .unselectable {
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none;    /* Firefox */
-        -ms-user-select: none;     /* IE/Edge */
-        user-select: none;         /* Chrome/Opera/Firefox */
+    @keyframes gradient-shift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
-    .inner-glow:hover {
-        box-shadow: inset 0 0 5px #ffffff;
-        transition: box-shadow 0.3s ease-in-out;
+    .connect-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
     }
 
-    .flex-child {
-        @apply mx-2 h-[40vh] md:w-[50vw] min-[798px]:max-w-[48vw] card rounded-md flex flex-col variant-outline;
+    .connect-card:hover {
+        background: rgba(251, 191, 36, 0.1);
+        border-color: rgba(251, 191, 36, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .icon-container {
+        width: 50px;
+        height: 50px;
+        background: rgba(251, 191, 36, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .connect-card:hover .icon-container {
+        background: rgba(251, 191, 36, 0.2);
+        transform: scale(1.1);
+    }
+
+    .arrow {
+        color: #6b7280;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    .connect-card:hover .arrow {
+        color: #fbbf24;
+        transform: translateX(4px);
     }
 </style>
