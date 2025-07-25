@@ -1,5 +1,55 @@
 [
 	{
+		"slug": "Taparoo",
+		"logo": "/projects/taparoo.png",
+		"title": "Taparoo",
+		"description": "NFC event wallet, smart spend rules, gasless USDC, instant kill-switch.",
+		"tags": [
+			"blockchain",
+			"design"
+		],
+		"elaboration": "Taparoo is a tap-to-pay system built for concerts, festivals and other high-traffic events that replaces plastic wristbands or paper vouchers with inexpensive NFC cards tied to on-chain smart-contract wallets. When a guest “taps” their card at a merchant point-of-sale, the card’s UID and an ephemeral signature are relayed to a lightweight server that maps the UID to a Circle Smart Contract Account created for that user. The backend then evaluates a programmable rules engine: Is the card enabled, is the purchase amount below the per-transaction limit, has the guest stayed within today’s cumulative spend cap, has the daily transaction-count limit been exceeded, does the merchant category match the card’s allow-list, and does the destination address pass Circle’s Compliance Engine screening? If every rule passes, the server signs and forwards a gas-sponsored USDC transfer from the child wallet to the merchant wallet through Circle’s Gas Station so the guest never sees a gas prompt or holds ETH.\n\nEach guest wallet is “disposable” because it holds only the event budget the user chooses to load. Funds come from a developer-controlled treasury wallet; if the child wallet balance is insufficient but the treasury has enough and the purchase still obeys all card rules, the system automatically tops up the child wallet and completes the payment, giving the user a seamless “overspend” experience without exposing the treasury keys. A single-click kill switch lets the guest or an administrator freeze a lost card and sweep remaining funds back to the treasury or to any chosen safe address, all while re-checking the Compliance Engine to block illicit flows.\n\nThe architecture keeps custody risk low: no user PII is stored, only the NFC UID, the child wallet address, and a handful of counters such as spend-today and last nonce to stop replay attacks. Because every transaction request and Circle API response is streamed to an append-only audit log, organizers can prove compliance after the event. The system is gasless, instant, and denominated entirely in familiar USD units, so users never realize they are interacting with crypto rails.",
+		"how": "Built on Circle's Programmable Wallet infrastructure using their Web3 Services SDK. The system uses a dual-wallet architecture with a main developer-controlled MPC wallet acting as the treasury and individual Smart Contract Accounts (SCAs) for each NFC card. This design ensures the main wallet never gets exposed while still allowing sophisticated spending controls.\nThe backend is a lightweight Node.js server that handles NFC UID mapping, rules enforcement, and transaction relaying. We deliberately kept it minimal to avoid storing sensitive user data while still maintaining full compliance through Circle's screening services.\nSince this was a solo hackathon build, I implemented a clever simulation system for NFC cards using UUIDs and cryptographic signatures. The functionality is identical to real NFC cards but allows for faster development iteration. Each simulated card generates a unique signature that the server maps to a specific Smart Contract Account, exactly how real NFC UIDs would work.\nThe hack here is that we're essentially creating a bridge between physical NFC taps and on-chain smart contract execution without requiring users to have any crypto knowledge or wallet management. When a real NFC card taps, it sends its UID to the server which triggers the entire transaction flow.\nThe project leverages three key Circle services. First, the Programmable Wallets SDK for creating and managing both the main MPC wallet and child SCAs. Second, the Gas Station for complete transaction fee abstraction so users never see or pay gas fees. Third, the Compliance Engine for real-time transaction screening on all fund movements.\nThe particularly clever part is how we handle the overpay capability. If a card has 10 USDC but tries to spend 15 USDC, the system checks if the main treasury has sufficient funds and if the transaction passes all the card's programmed rules. If both conditions are met, it automatically funds the child SCA from the treasury and executes the transaction in a single flow.\nEach NFC card maps to a Smart Contract Account with programmable session key limits. We implemented a server-side rules engine that enforces maximum transaction amounts, daily spending caps, transaction count limits, and custom business rules. The beauty is that these rules are enforced both server-side for speed and on-chain for security.\nThe kill switch functionality was particularly interesting to implement. When triggered, it instantly disables the card, withdraws all funds back to the main wallet, and runs everything through Circle's Compliance Engine to ensure we're not moving illicit funds. The user never loses control of their money but gets the security of programmable limits.\nThe payment flow starts when a merchant enters an amount on their POS terminal. The user taps their NFC card, sending the UID to our backend. The server looks up the mapped SCA, checks all programmed rules, verifies compliance, and if everything passes, uses Circle's SDK to transfer USDC from the child wallet to the merchant's wallet.\nAll of this happens in under 2 seconds with zero gas fees for the user. The transaction is completely gasless from the user perspective but still benefits from blockchain security and programmability.\nEvery transaction and fund movement goes through Circle's Compliance Engine automatically. This includes card funding, payments, and kill switch withdrawals. The system ensures no sanctioned addresses or risky wallets are involved in any transaction without requiring manual compliance checks.\nThe server architecture is designed to be stateless and compliance-first. We don't store sensitive user data but maintain full auditability through Circle's infrastructure.\n",
+		"details": {
+			"Technologies Used": [
+				"Circle SDK",
+				"Circle Programmable Wallets - Developer MPC Wallets",
+				"Circle Gas Station",
+				"Circle Compliance Engine",
+				"Node.js"
+			],
+			"Awards": [
+				"Circle - Create a Gasless Experience"
+			],
+			"Team": [
+				{
+					"name": "Chetany Bhardwaj",
+					"linkedin": "https://www.linkedin.com/in/chetanybhardwaj/"
+				}
+			]
+		},
+		"links": {
+			"GitHub": {
+				"url": "https://github.com/chetanyb/EGC-2025",
+				"logo": "/images/github.svg",
+				"name": "GitHub"
+			},
+			"Showcase": {
+				"url": "https://ethglobal.com/showcase/taparoo-qmfc0",
+				"logo": "/images/ethglobal.svg",
+				"name": "EthGlobal"
+			}
+		},
+		"video": "https://ethglobal.storage/projects/qmfc0/video/medium.mp4?t=1753474915422",
+		"images": [
+			"https://ethglobal.b-cdn.net/projects/qmfc0/screenshots/3svyh/default.jpg",
+			"https://ethglobal.b-cdn.net/projects/qmfc0/screenshots/eu80x/default.jpg",
+			"https://ethglobal.b-cdn.net/projects/qmfc0/screenshots/zc5f6/default.jpg",
+			"https://ethglobal.b-cdn.net/projects/qmfc0/screenshots/e2uha/default.jpg",
+			"https://ethglobal.b-cdn.net/projects/qmfc0/screenshots/i5bkx/default.jpg"
+		]
+	},
+	{
 		"slug": "zksampler",
 		"logo": "/projects/zkSampler.png",
 		"title": "zkSampler",
@@ -37,12 +87,12 @@
 		},
 		"video": "https://stream.mux.com/euQnpzSvef7khTAz02hmV6J9PcgU023l3GuBhao3hfDpk/high.mp4",
 		"images": [
-			"https://ethglobal.b0bd725bc77a3ea7cd3826627d01fcb6.r2.cloudflarestorage.com/projects/z5aeb/images/Screenshot%202025-03-23%20at%209.00.10%E2%80%AFPM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=dd28f7ba85ca3162a53d5c60b5f3dd05%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T181310Z&X-Amz-Expires=3600&X-Amz-Signature=82068f95caafcc13cba4b3277c6fbd81d306a5bc114bb821063520c9e7922ad2&X-Amz-SignedHeaders=host",
+			"https://ethglobal.b0bd725bc77a3ea7cd3826627d01fcb6.r2.cloudflarestorage.com/projects/z5aeb/images/Screenshot%202025-03-23%20at%209.00.10%E2%80%AFPM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dd28f7ba85ca3162a53d5c60b5f3dd05%2F20250725%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250725T203513Z&X-Amz-Expires=3600&X-Amz-Signature=668d584a10449b671bdac15d13d329ff2d9dd7a7b9a6fd900ef6e487e5e13417&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
 			"https://ethglobal.b-cdn.net/projects/z5aeb/screenshots/m49ws/default.jpg",
 			"https://ethglobal.b-cdn.net/projects/z5aeb/screenshots/bmh9r/default.jpg",
 			"https://ethglobal.b-cdn.net/projects/z5aeb/screenshots/1d6kf/default.jpg",
 			"https://ethglobal.b-cdn.net/projects/z5aeb/screenshots/pt7zs/default.jpg",
-			"https://ethglobal.b0bd725bc77a3ea7cd3826627d01fcb6.r2.cloudflarestorage.com/projects/z5aeb/images/Screenshot%202025-03-23%20at%209.06.55%E2%80%AFPM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=dd28f7ba85ca3162a53d5c60b5f3dd05%2F20250328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250328T181310Z&X-Amz-Expires=3600&X-Amz-Signature=5cc082c505a41c3e902c3a51e733a35c68931e23760a75d1bda4165a91d29b8e&X-Amz-SignedHeaders=host"
+			"https://ethglobal.b0bd725bc77a3ea7cd3826627d01fcb6.r2.cloudflarestorage.com/projects/z5aeb/images/Screenshot%202025-03-23%20at%209.06.55%E2%80%AFPM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dd28f7ba85ca3162a53d5c60b5f3dd05%2F20250725%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250725T203513Z&X-Amz-Expires=3600&X-Amz-Signature=0699103da37a7837535fb63147b65dc28a1f431c60d6fdabc3d89a51f2267ced&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
 		]
 	},
 	{
